@@ -1,0 +1,141 @@
+<div>
+  <div>
+      <div>
+          <h1>Order
+              {{ order.name }}
+          </h1>
+          <p>Placed on
+              {{ order.created_at | date: format: 'date' }}
+          </p>
+          <span>{{ order.financial_status_label }}</span>
+      </div>
+
+      <a href="{{ routes.account_url }}">Back to account</a>
+  </div>
+
+  <div>
+      {% for line_item in order.line_items %}
+          <div>
+              <div>
+                  <div>
+                      {% if line_item.image %}
+                          <img src="{{ line_item.image | img_url: 'medium' }}" alt="{{ line_item.image.alt }}">
+                      {% else %}
+                          {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-center object-cover' }}
+                      {% endif %}
+                  </div>
+
+                  <div>
+                      <h1>{{ line_item.title | link_to: line_item.product.url }}</h1>
+
+                      <table>
+                          <tbody>
+                              <tr>
+                                  <td>Price</td>
+                                  <td>{{ line_item.original_price | money }}</td>
+                              </tr>
+                              <tr>
+                                  <td>Quantity</td>
+                                  <td>{{ line_item.quantity }}</td>
+                              </tr>
+                              <tr>
+                                  <td>Final price</td>
+                                  <td>{{ line_item.final_line_price | money }}</td>
+                              </tr>
+                          </tbody>
+                      </table>
+
+                      <div>
+                          {{ line_item.product.description | truncatewords: 15 }}
+                      </div>
+                  </div>
+
+                  <div>
+                      <h1>Shipping address</h1>
+
+                      <div>
+                          <div>
+                              <p>{{ order.shipping_address.address1 }}</p>
+                              <p>{{ order.shipping_address.city }}</p>
+                              <p>{{ order.shipping_address.zip }}</p>
+                              <p>{{ order.shipping_address.country }}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+              <div>
+                  <h1>Fulfillment</h1>
+
+                  {% if line_item.successfully_fulfilled_quantity > 0 %}
+                      <p>We have fulfilled
+                          {{ line_item.successfully_fulfilled_quantity }}
+                          items of your recent order.
+                      </p>
+                      <p>Tracking company:
+                          {{ line_item.fulfillment.tracking_company }}
+                      </p>
+                      <p>Tracking number:
+                          {{ line_item.fulfillment.tracking_number }}
+                      </p>
+
+                      <a target="_blank" href="{{ line_item.fulfillment.tracking_url }}">
+                          Track order
+                          <span>{% render 'icon-link' %}</span>
+                      </a>
+                  {% else %}
+                      <p>This item is not yet fulfilled</p>
+                  {% endif %}
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+
+  <div>
+      <div>
+          <h1>Billing address</h1>
+
+          {{ order.billing_address | format_address }}
+      </div>
+
+      <div>
+          <h1>Payment information</h1>
+
+          {% for transaction in order.transactions %}
+              <div>
+                  {% assign credit_card_company = transaction.payment_details.credit_card_company %}
+                  {% assign credit_card_last_four_digits = transaction.payment_details.credit_card_number %}
+
+                  {% if credit_card_company %}
+                      <p>{{ credit_card_company }}</p>
+                      <p>{{ credit_card_last_four_digits }}</p>
+
+                      <span>{{ transaction.status_label }}</span>
+                  {% else %}
+                      <p>This order is manually placed
+                          {{ shop.name }}</p>
+                  {% endif %}
+              </div>
+          {% endfor %}
+      </div>
+      <div>
+          <table>
+              <tbody>
+                  <tr>
+                      <td>Subtotal</td>
+                      <td>{{ order.subtotal_price | money }}</td>
+                  </tr>
+                  <tr>
+                      <td>Shipping</td>
+                      <td>{{ order.shipping_price | money }}</td>
+                  </tr>
+                  <tr>
+                      <td>Total</td>
+                      <td>{{ order.total_price | money }}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
