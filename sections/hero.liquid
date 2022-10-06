@@ -1,0 +1,55 @@
+{%- for block in section.blocks -%}
+  <div>
+    <img src="{{ block.settings.image | img_url: 'master' }}">
+    <p>
+      {{ block.settings.hero_title }}
+    </p>
+    <h1>
+      {{ block.settings.product_name }}
+    </h1>
+    <p>
+      {{ block.settings.product_description }}
+    </p>
+    <a href="products/{{ block.settings.product }}">See Product</a>
+  </div>
+{%- endfor -%}
+
+{% schema %}
+  {
+    "name": "Hero Product",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "hero_title",
+            "label": "Hero Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Add Image"
+          },
+          {
+            "type": "text",
+            "id": "product_name",
+            "label": "Product Name"
+          },
+          {
+            "type": "textarea",
+            "id": "product_description",
+            "label": "Product Description"
+          }, {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
