@@ -1,6 +1,7 @@
 {%- for block in section.blocks -%}
-  <div>
-    <img src="{{ block.settings.image | img_url: 'master' }}">
+  <section>
+    <img src="{{ block.settings.image_mobile | img_url: 'master' }}">
+    {%- comment -%} <img src="{{ block.settings.image_desktop | img_url: 'master' }}"> {%- endcomment -%}
     <p>
       {{ block.settings.hero_title }}
     </p>
@@ -11,7 +12,7 @@
       {{ block.settings.product_description }}
     </p>
     <a href="products/{{ block.settings.product }}">See Product</a>
-  </div>
+  </section>
 {%- endfor -%}
 
 {% schema %}
@@ -31,8 +32,13 @@
           },
           {
             "type": "image_picker",
-            "id": "image",
-            "label": "Add Image"
+            "id": "image_mobile",
+            "label": "Add Image for Mobile View"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_desktop",
+            "label": "Add Image for Desktop View"
           },
           {
             "type": "text",

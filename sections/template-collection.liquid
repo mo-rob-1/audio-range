@@ -1,5 +1,4 @@
 <div>
-    <a href="{{ routes.collections_url }}">Go back to collections</a>
     {% paginate collection.products by section.settings.number_of_products_per_page %}
         <h1>{{ collection.title }}</h1>
 
@@ -7,6 +6,27 @@
             <div>
                 {% for product in collection.products %}
                     {% render 'product-card', product_product: product %}
+                    {%- comment -%} <div>
+                        <a href="{{ product.url }}">
+                          {% if product.featured_image %}
+                            <div>
+                              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}"/>
+                            </div>
+                    
+                          {% else %}
+                            {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}
+                          {% endif %}
+                        </a>
+                        <div>
+                          <h2>{{ product.title }}</h2>
+                    
+                          <p>{{ product.description }}</p>
+                    
+                          <a href="{{ product.url }}">
+                            See Product
+                          </a>
+                        </div>
+                      </div> {%- endcomment -%}
                 {% else %}
                     <p>No products in this collection</p>
                 {% endfor %}

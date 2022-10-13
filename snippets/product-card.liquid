@@ -1,25 +1,30 @@
-<div>
-  <div>
-    <a href="{{ product_product.url }}">
-      {% if product_product.featured_image %}
-        <div>
-          <img src="{{ product_product.featured_image | img_url: 'medium' }}" alt="{{ product_product.featured_image.alt }}"/>
-        </div>
+<div class="pattern">
+    <div class="image-wrapper">
+      <a href="{{ product_product.url }}">
+        {% if product_product.featured_image %}
+          <div>
+            <img src="{{ product_product.featured_image | img_url: 'medium' }}" alt="{{ product_product.featured_image.alt }}"/>
+          </div>
 
-      {% else %}
-        {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}
-      {% endif %}
-    </a>
-
-    <div>
-      <span>{{ product_product.vendor }}
-      </span>
-
-      <a href="{{ product_product.url }}">{{ product_product.title }}
+        {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}
+        {% endif %}
       </a>
-
-      <p>{{ product_product.price | money }}
-      </p>
     </div>
-  </div>
+
+    <div class="text-wrapper">
+      {% if product_product.tags contains 'New Product' %}
+        <div class="new-tag">
+          <span class="text-sm font-bold text-white uppercase">New Product</span>
+        </div>
+      {% endif %}
+
+      <h2>{{ product_product.title }}</h2>
+
+      <p class="pattern-desc">{{ product_product.description }}</p>
+
+      <a href="{{ product_product.url }}">
+        See Product
+      </a>
+    </div>
 </div>

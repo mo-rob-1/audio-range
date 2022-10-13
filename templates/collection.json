@@ -1,8 +1,42 @@
 {
-    "sections": {
-        "template": {
-            "type": "template-collection"
-        }
+  "sections": {
+    "template": {
+      "type": "template-collection",
+      "settings": {
+        "number_of_products_per_page": 6
+      }
     },
-    "order": ["template"]
+    "72652e1c-88b3-40f1-9f22-7161979f339f": {
+      "type": "template-list-collections",
+      "settings": {
+        "title": ""
+      }
+    },
+    "646fce02-f251-41c4-9ce3-90a0d89546c3": {
+      "type": "section-about",
+      "blocks": {
+        "b43954fb-b35e-484c-bae4-6630cb0c133e": {
+          "type": "about",
+          "settings": {
+            "about_title": "Bringing you the best audio gear",
+            "about_description": "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.",
+            "about_image_mobile": "shopify:\/\/shop_images\/image-best-gear.jpg",
+            "about_image_tablet": "shopify:\/\/shop_images\/image-best-gear_9d190b37-9e27-4805-8886-62c3f879dee6.jpg",
+            "about_image_desktop": "shopify:\/\/shop_images\/image-best-gear_0c46be19-ec0d-44f4-a30c-5d5da1cd4ccc.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "b43954fb-b35e-484c-bae4-6630cb0c133e"
+      ],
+      "settings": {
+        "title": "About Us"
+      }
+    }
+  },
+  "order": [
+    "template",
+    "72652e1c-88b3-40f1-9f22-7161979f339f",
+    "646fce02-f251-41c4-9ce3-90a0d89546c3"
+  ]
 }

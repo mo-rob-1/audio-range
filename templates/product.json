@@ -1,26 +1,119 @@
 {
-    "sections": {
-        "template": {
-            "type": "template-product",
-            "blocks": {
-                "vendor": { "type": "vendor" },
-                "title": { "type": "title" },
-                "price": { "type": "price" },
-                "variant_selector": { "type": "variant_selector" },
-                "quantity": { "type": "quantity" },
-                "description": { "type": "description" },
-                "checkout_buttons": { "type": "checkout_buttons" }
-            },
-            "block_order": [
-                "vendor",
-                "title",
-                "price",
-                "variant_selector",
-                "quantity",
-                "description",
-                "checkout_buttons"
-            ]
+  "sections": {
+    "template": {
+      "type": "template-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+          }
+        },
+        "quantity": {
+          "type": "quantity",
+          "settings": {
+          }
+        },
+        "checkout_buttons": {
+          "type": "checkout_buttons",
+          "settings": {
+          }
         }
+      },
+      "block_order": [
+        "title",
+        "description",
+        "price",
+        "variant_selector",
+        "quantity",
+        "checkout_buttons"
+      ],
+      "settings": {
+      }
     },
-    "order": ["template"]
+    "e1560027-918a-41f2-931b-89266fbec07a": {
+      "type": "section-recommended-products",
+      "blocks": {
+        "13fed2b9-d827-432a-9d30-1ab37eaaaa1d": {
+          "type": "product",
+          "settings": {
+            "title": "ZX9 Speaker",
+            "image": "shopify:\/\/shop_images\/image-category-page-preview.jpg",
+            "link": "shopify:\/\/products\/zx9-speaker"
+          }
+        },
+        "2cc50651-1783-4ba6-ac18-68627e047fbb": {
+          "type": "product",
+          "settings": {
+            "title": "XX9 Mark I",
+            "image": "shopify:\/\/shop_images\/image-category-page-preview_a1038934-ba5c-411a-bde1-1c6d9f2e1234.jpg",
+            "link": "shopify:\/\/products\/xx99-mark-i"
+          }
+        },
+        "11ce6862-4ee1-40cd-bf5b-a9f81a245088": {
+          "type": "product",
+          "settings": {
+            "title": "XX59",
+            "image": "shopify:\/\/shop_images\/image-category-page-preview_d4756acb-4898-49dc-955a-e674d26020ca.jpg",
+            "link": "shopify:\/\/products\/xx59-headphones"
+          }
+        }
+      },
+      "block_order": [
+        "13fed2b9-d827-432a-9d30-1ab37eaaaa1d",
+        "2cc50651-1783-4ba6-ac18-68627e047fbb",
+        "11ce6862-4ee1-40cd-bf5b-a9f81a245088"
+      ],
+      "settings": {
+        "title": "You may also like"
+      }
+    },
+    "b7dc5c77-a015-4dc3-b9bd-69f12650bed3": {
+      "type": "template-list-collections",
+      "settings": {
+        "title": "Collections"
+      }
+    },
+    "340c7080-2c35-4db0-9b5e-323630ac3244": {
+      "type": "section-about",
+      "blocks": {
+        "8eb958b5-6c17-461c-ae42-cfc52b966042": {
+          "type": "about",
+          "settings": {
+            "about_title": "Bringing you the best audio gear",
+            "about_description": "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.",
+            "about_image_mobile": "shopify:\/\/shop_images\/image-best-gear.jpg",
+            "about_image_tablet": "shopify:\/\/shop_images\/image-best-gear_9d190b37-9e27-4805-8886-62c3f879dee6.jpg",
+            "about_image_desktop": "shopify:\/\/shop_images\/image-best-gear_0c46be19-ec0d-44f4-a30c-5d5da1cd4ccc.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "8eb958b5-6c17-461c-ae42-cfc52b966042"
+      ],
+      "settings": {
+        "title": "About Us"
+      }
+    }
+  },
+  "order": [
+    "template",
+    "e1560027-918a-41f2-931b-89266fbec07a",
+    "b7dc5c77-a015-4dc3-b9bd-69f12650bed3",
+    "340c7080-2c35-4db0-9b5e-323630ac3244"
+  ]
 }

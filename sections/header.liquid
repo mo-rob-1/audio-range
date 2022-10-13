@@ -54,12 +54,81 @@
               <button type="button" x-on:click="searchBarOpen = true">
                   {% render 'icon-search' %}
               </button>
-              <a href="{{ routes.cart_url }}">
+              {%- comment -%} <a href="{{ routes.cart_url }}">
                   {% render 'icon-shopping-cart' %}
                   {% if cart.item_count > 0 %}
                       <span>{{ cart.item_count }}</span>
                   {% endif %}
-              </a>
+              </a> {%- endcomment -%}
+
+            <div id="ex1" class="modal">
+                {% if cart.item_count > 0 %}
+                    <div>
+                        <div>
+                            <div>
+                                <h3>Cart ({{ cart.item_count }})</h3>   
+                            </div>
+                        </div>
+
+                        <button onclick="clearCart();">Clear cart</button>
+
+
+                        <div>
+                            <form action="{{ routes.cart_url }}" method="POST" novalidate>
+                                <div>
+                                    <div>
+                                        {% for item in cart.items %}
+                                            <div>
+                                                <div>
+                                                    <a href="{{ item.url }}">
+                                                        {% if item.image %}
+                                                            <img src="{{ item.image | img_url: 'small'}}" alt="{{ item.title | escape }}">
+                                                        {% else %}
+                                                            {{ 'product-1' | placeholder_svg_tag: 'h-20 w-20 object-cover border' }}
+                                                        {% endif %}
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a href="{{ item.url }}">{{ item.product.title | truncatewords: 5 }}</a>
+                                                </div>
+                                                <div>
+                                                    {{ item.line_price | money }}
+                                                </div>
+                                                <div>
+                                                    <input name="updates[]" value="{{ item.quantity }}" min="1" type="number" id="updates_{{ forloop.index }}">
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div>
+                            <h3>Total</h3>
+                            <h3>{{ cart.total_price | money }}</h3>
+                        </div>
+
+                        <div>
+                            <button name="checkout" type="submit">Checkout</button>
+                        </div>
+                    </div>
+                  
+                  {% else %}
+                    <div>
+                        <div>
+                            <h1>Your cart is empty</h1>
+                  
+                            <div>
+                                <a href="{{ routes.all_products_collection_url }}">Continue shopping</a>
+                            </div>
+                        </div>
+                    </div>
+                  {% endif %}
+            </div>
+
+            <!-- Link to open the modal -->
+            <a href="#ex1" rel="modal:open">{% render 'icon-shopping-cart' %}</a>
 
               {% if shop.customer_accounts_enabled %}
                   {% if customer %}

@@ -14,18 +14,28 @@
       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
         <input type="hidden" name="id" value="{{ selected_variant.id }}">
 
+        {% if product.tags contains 'New Product' %}
+          <div class="new-tag">
+            <span class="text-sm font-bold text-white uppercase">New Product</span>
+          </div>
+        {% endif %}
+
         {% for block in section.blocks %}
           {% case block.type %}
-            {% when 'vendor' %}
-              <div>
-                <span>{{ product.vendor }}
-                </span>
-              </div>
             {% when 'title' %}
               <div>
-                <h1>{{ product.title }}
+                <h1>
+                  {{ product.title }}
                 </h1>
               </div>
+
+            {% when 'description' %}
+              <div>
+                <p>
+                  {{ product.description }}
+                </p>
+              </div>
+
             {% when 'price' %}
               <div id="price-{{ section.id }}">
                 <span>{{ selected_variant.compare_at_price | money }}
@@ -67,16 +77,9 @@
 
             {% when 'quantity' %}
               <div>
-                <label for="Quantity-{{ section.id }}">Quantity</label>
-
                 <div>
                   <input id="Quantity-{{ section.id }}" min="1" name="quantity" type="number" value="1">
                 </div>
-              </div>
-            {% when 'description' %}
-              <div>
-                <p>{{ product.description }}
-                </p>
               </div>
 
             {% when 'checkout_buttons' %}
@@ -96,17 +99,43 @@
       {% endform %}
     </div>
   </div>
+
+  <div>
+    <h1>Features</h1>
+    <p>{{ product.metafields.custom.product_features }}</p>
+  </div>
+
+<div>
+  <h1>In the Box</h1>
+  <div>
+    {% for item_quantity in product.metafields.custom.in_the_box_item_quantity.value %}
+      <ul>
+        <li>{{ item_quantity }}x</li>
+      </ul>
+    {% endfor %}
+  </div>
+
+  <div>
+    {% for item in product.metafields.custom.in_the_box_items.value %}
+      <ul>
+        <li>{{ item }}</li>
+      </ul>
+    {% endfor %}
+  </div>
+</div>
+
+<div>
+{% for image in product.metafields.custom.featured_images.value %}
+  <img src="{{ image | img_url: "large" }}">
+{% endfor %}
+</div>
+
 </div>
 
 {% schema %}
   {
     "name": "Product",
     "blocks": [
-      {
-        "type": "vendor",
-        "name": "Vendor",
-        "limit": 1
-      },
       {
         "type": "title",
         "name": "Title",
@@ -121,7 +150,8 @@
         "type": "variant_selector",
         "name": "Variant Selector",
         "limit": 1
-      }, {
+      },
+      {
         "type": "quantity",
         "name": "Quantity",
         "limit": 1

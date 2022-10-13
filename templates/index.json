@@ -1,14 +1,118 @@
 {
-    "sections": {
-        "hero": {
-            "type": "hero"
-        },
-        "featured-collection": {
-            "type": "featured-collection",
-            "settings": {
-                "featured_collection": "all"
-            }
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "blocks": {
+        "5e58239c-fc01-400e-a434-99ae2c759d3a": {
+          "type": "image",
+          "settings": {
+            "hero_title": "New Product",
+            "image_mobile": "shopify:\/\/shop_images\/image-header.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/image-hero.jpg",
+            "product_name": "XX99 Mark II Headphones",
+            "product_description": "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
+            "product": "xx99-mark-ii-headphones"
+          }
         }
+      },
+      "block_order": [
+        "5e58239c-fc01-400e-a434-99ae2c759d3a"
+      ],
+      "settings": {
+      }
     },
-    "order": ["hero", "featured-collection"]
+    "list-collections": {
+      "type": "template-list-collections",
+      "settings": {
+        "title": ""
+      }
+    },
+    "featured_product_one": {
+      "type": "featured-product-one",
+      "blocks": {
+        "15d7a483-7734-4bc1-8d7b-f24cd0c3d537": {
+          "type": "product",
+          "settings": {
+            "image_mobile": "shopify:\/\/shop_images\/image-speaker-zx9_786fcbf9-231a-43ef-a1c7-397ab8eec53b.png",
+            "image_desktop": "shopify:\/\/shop_images\/image-speaker-zx9_aa24e5a0-806f-4a01-ac25-a36c883f2279.png",
+            "product_name": "ZX9 SPEAKER",
+            "product_description": "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
+            "product": "zx9-speaker"
+          }
+        }
+      },
+      "block_order": [
+        "15d7a483-7734-4bc1-8d7b-f24cd0c3d537"
+      ],
+      "settings": {
+      }
+    },
+    "featured_product_two": {
+      "type": "featured-product-two",
+      "blocks": {
+        "b842a70b-5273-4d8a-9c06-9c54e266ff3c": {
+          "type": "product",
+          "settings": {
+            "image_mobile": "shopify:\/\/shop_images\/image-speaker-zx7.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/image-speaker-zx7_68fe7936-b2f4-4013-b544-640a8f0e9a25.jpg",
+            "product_name": "ZX7 Speaker",
+            "product": "zx7-speaker"
+          }
+        }
+      },
+      "block_order": [
+        "b842a70b-5273-4d8a-9c06-9c54e266ff3c"
+      ],
+      "settings": {
+      }
+    },
+    "featured_product_three": {
+      "type": "featured-product-three",
+      "blocks": {
+        "c0d3ef15-54a2-4f7e-8023-f64c1c4d7c03": {
+          "type": "product",
+          "settings": {
+            "image_mobile": "shopify:\/\/shop_images\/image-earphones-yx1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/image-earphones-yx1_a9a2d5b0-0276-495b-9540-4b781c9a413f.jpg",
+            "product_name": "YX1 Earphones",
+            "product": "yx1-wireless-earphones"
+          }
+        }
+      },
+      "block_order": [
+        "c0d3ef15-54a2-4f7e-8023-f64c1c4d7c03"
+      ],
+      "settings": {
+      }
+    },
+    "about": {
+      "type": "section-about",
+      "blocks": {
+        "5b47727a-afd7-4abe-b3c5-46c6c45e2906": {
+          "type": "about",
+          "settings": {
+            "about_title": "Bringing you the best audio gear",
+            "about_description": "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.",
+            "about_image_mobile": "shopify:\/\/shop_images\/image-best-gear.jpg",
+            "about_image_tablet": "shopify:\/\/shop_images\/image-best-gear_9d190b37-9e27-4805-8886-62c3f879dee6.jpg",
+            "about_image_desktop": "shopify:\/\/shop_images\/image-best-gear_0c46be19-ec0d-44f4-a30c-5d5da1cd4ccc.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "5b47727a-afd7-4abe-b3c5-46c6c45e2906"
+      ],
+      "settings": {
+        "title": "About Us"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "list-collections",
+    "featured_product_one",
+    "featured_product_two",
+    "featured_product_three",
+    "about"
+  ]
 }

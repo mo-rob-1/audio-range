@@ -20,7 +20,8 @@
                           </a>
 
                           <div>
-                              <h1>{{ collection.title }}</h1>
+                            <h1>{{ collection.title }}</h1>
+                            <a href="{{ collection.url }}">Shop</a>
                           </div>
                       </div>
                   </div>
@@ -40,6 +41,12 @@
           "default": "Collections",
           "label": "Title"
       }
-  ]
+  ],
+    "presets": [
+        {
+            "name": "List Collections",
+            "category": "Collections"
+        }
+    ]
 }
 {% endschema %}

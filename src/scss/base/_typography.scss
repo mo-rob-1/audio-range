@@ -1,3 +1,17 @@
 body {
     font-family: 'Manrope', sans-serif !important;
 }
+.pattern:nth-child(odd) {
+    color: green;
+}
+.pattern:nth-child(even) {
+    color: red;
+}
+
+.pattern:nth-child(even) > .text-wrapper {
+    color: orange !important;
+}
+
+.text-wrapper:first-of-type{
+    content: "Hello";
+}

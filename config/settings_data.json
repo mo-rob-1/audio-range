@@ -1,6 +1,37 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "mobile_menu_title": "Menu",
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "c01cf8a6-d7b7-4e1b-be80-e73d44a73c99": {
+            "type": "footer",
+            "settings": {
+              "footer_description": "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week."
+            }
+          }
+        },
+        "block_order": [
+          "c01cf8a6-d7b7-4e1b-be80-e73d44a73c99"
+        ],
+        "settings": {
+          "menu": "footer"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+    }
   }
 }
