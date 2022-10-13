@@ -1,0 +1,58 @@
+{%- for block in section.blocks -%}
+  <section>
+    <img src="{{ block.settings.image_mobile | img_url: 'master' }}">
+    {%- comment -%}
+      <img src="{{ block.settings.image_desktop | img_url: 'master' }}">
+    {%- endcomment -%}
+    <p>
+      {{ block.settings.hero_title }}
+    </p>
+    <h1>
+      {{ block.settings.product_name }}
+    </h1>
+    <p>
+      {{ block.settings.product_description }}
+    </p>
+    <a href="products/{{ block.settings.product }}">See Product</a>
+  </section>
+{%- endfor -%}
+
+{% schema %}
+  {
+    "name": "First Featured Product",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Add Image for Mobile View"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_desktop",
+            "label": "Add Image for Desktop View"
+          },
+          {
+            "type": "text",
+            "id": "product_name",
+            "label": "Product Name"
+          },
+          {
+            "type": "textarea",
+            "id": "product_description",
+            "label": "Product Description"
+          }, {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %} 
