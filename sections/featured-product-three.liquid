@@ -1,14 +1,17 @@
 {%- for block in section.blocks -%}
-    <section>
-      <img src="{{ block.settings.image_mobile | img_url: 'master' }}">
+    <section class="featured-product-three">
+      <img class="featured-product-three__img" src="{{ block.settings.image_mobile | img_url: 'master' }}">
       {%- comment -%} <img src="{{ block.settings.image_desktop | img_url: 'master' }}"> {%- endcomment -%}
-      <p>
+      {%- comment -%} <p class="featured-product-three__title">
         {{ block.settings.hero_title }}
-      </p>
-      <h1>
-        {{ block.settings.product_name }}
-      </h1>
-      <a href="products/{{ block.settings.product }}">See Product</a>
+      </p> {%- endcomment -%}
+
+      <div class="featured-product-three__text-wrapper">
+        <h1 class="featured-product-three__product-name">
+          {{ block.settings.product_name }}
+        </h1>
+        <a class="featured-product-three__link" href="products/{{ block.settings.product }}">See Product</a>
+      </div>
     </section>
   {%- endfor -%}
   

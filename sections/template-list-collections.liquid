@@ -1,35 +1,30 @@
-<div>
-  <h1>{{ section.settings.title }}</h1>
+<section class="list-collections">
+    <h1>{{ section.settings.title }}</h1>
 
-  <div>
-      <div>
-          {% for collection in collections %}
-              {% if collection.all_products_count > 0 %}
-                  <div>
-                      <div>
-                          <a href="{{ collection.url }}">
-                              <div>
-                                  {% if collection.featured_image != blank %}
-                                      {% assign collection_image = collection.featured_image %}
-                                  {% else %}
-                                      {% assign collection_image = collection.products.first.image %}
-                                  {% endif %}
+    <div class="list-collections__wrapper">
+        {% for collection in collections %}
+            {% if collection.all_products_count > 0 %}
+                    <div class="list-collections__item">
+                        <a href="{{ collection.url }}">
+                            <div class="list-collections__img-wrapper">
+                                {% if collection.featured_image != blank %}
+                                    {% assign collection_image = collection.featured_image %}
+                                {% else %}
+                                    {% assign collection_image = collection.products.first.image %}
+                                {% endif %}
 
-                                  <img src="{{ collection_image | img_url: 'medium' }}" alt="{{ collection.title | escape }}">
-                              </div>
-                          </a>
-
-                          <div>
-                            <h1>{{ collection.title }}</h1>
-                            <a href="{{ collection.url }}">Shop</a>
-                          </div>
-                      </div>
-                  </div>
-              {% endif %}
-          {% endfor %}
-      </div>
-  </div>
-</div>
+                                <img class="list-collections__img" src="{{ collection_image | img_url: 'medium' }}" alt="{{ collection.title | escape }}">
+                            </div>
+                        </a>
+                        <div class="list-collections__text-wrapper">
+                            <h1 class="list-collections__title">{{ collection.title }}</h1>
+                            <a class="list-collections__link" href="{{ collection.url }}">Shop {% render 'icon-chevron-right' %}</a>
+                        </div>
+                    </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
 
 {% schema %}
 {

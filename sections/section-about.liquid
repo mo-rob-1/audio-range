@@ -1,15 +1,15 @@
-<section>
+<section class="about">
   {%- for block in section.blocks -%}
-    <div>
-      <h2>
-        {{ block.settings.about_title }}
-      </h2>
-      <p>
-        {{ block.settings.about_description }}
-      </p>
-      <img src="{{ block.settings.about_image_mobile | img_url: 'large' }}" alt="{{ block.settings.about_title }}">
+    <div class="about__content-wrapper">
+      <img class="about__img" src="{{ block.settings.about_image_mobile | img_url: 'large' }}" alt="{{ block.settings.about_title }}">
       {%- comment -%} <img src="{{ block.settings.about_image_tablet | img_url: 'large' }}" alt="{{ block.settings.about_title }}">
       <img src="{{ block.settings.about_image_desktop | img_url: 'large' }}" alt="{{ block.settings.about_title }}"> {%- endcomment -%}
+      <h2 class="about__title">
+        {{ block.settings.about_title }}
+      </h2>
+      <p class="about__description">
+        {{ block.settings.about_description }}
+      </p>
     </div>
   {%- endfor -%}
 </section>

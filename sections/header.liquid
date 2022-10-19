@@ -1,59 +1,57 @@
-<div x-cloak x-data="{ mobileMenuOpen: false, searchBarOpen: false }">
+<div x-cloak x-data="{ mobileMenuOpen: false, searchBarOpen: false }" class="image-background">
   <div>
-      <div>
+      <div class="header__wrapper">
+        <div class="header__nav--mobile">
           <!-- STORE NAME / STORE LOGO -->
-          <div>
-              <h1>
-                {{ shop.name }}
-              </h1>
-          </div>
+            <button class="header__hamburger-btn" type="button" x-on:click="mobileMenuOpen = true">
+                {% render 'icon-hamburger' %}
+            </button>
 
-          <div>
-              <button type="button" x-on:click="mobileMenuOpen = true">
-                  {% render 'icon-hamburger' %}
-              </button>
-          </div>
+            <a class="header__site-name" href="{{ shop.url }}">{{ shop.name }}</a>
+
+            <!-- Link to open the modal -->
+            <a class="header__cart-icon" href="#ex1" rel="modal:open">
+                {% render 'icon-shopping-cart' %}
+            </a>
+        </div>
 
           <!-- NAVIGATION MENU -->
-          <nav>
-              {% for link in section.settings.menu.links %}
-                  {% if link.links != blank %}
-                      {% assign link_handle = link.handle | replace: '-', '_' %}
-                      <div x-data="{ {{link_handle}}: false }">
-                          <button x-on:click="{{link_handle}} = ! {{link_handle}}">
-                              {{ link.title }}
-                              {% render 'icon-dropdown' %}
-                          </button>
+          <nav class="header__nav header__nav--desktop">
+            <ul class="header__nav-list">
+                {% for link in section.settings.menu.links %}
+                    {% if link.links != blank %}
+                        {% assign link_handle = link.handle | replace: '-', '_' %}
+                        <div x-data="{ {{link_handle}}: false }">
+                            <button x-on:click="{{link_handle}} = ! {{link_handle}}">
+                                {{ link.title }}
+                                {% render 'icon-dropdown' %}
+                            </button>
 
-                          <div @click.away="{{link_handle}} = false" x-show="{{link_handle}}" x-transition:enter-end="opacity-100 translate-y-0" x-transition:enter-start="opacity-0 translate-y-3" x-transition:enter="transition ease-out duration-300" x-transition:leave-end="opacity-0 translate-y-3" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave="transition ease-out duration-300">
-                              <div>
-                                  <div>
-                                      {% for childlink in link.links  %}
-                                          <a href="{{childlink.url}}">
-                                              <div>
-                                                  <p>
-                                                    {{childlink.title}}
-                                                  </p>
-                                              </div>
-                                          </a>
-                                      {% endfor %}
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  {% else %}
-                      <a href="{{ link.url }}">
-                          {{ link.title }}
-                      </a>
-                  {% endif %}
-              {% endfor %}
+                            <div @click.away="{{link_handle}} = false" x-show="{{link_handle}}" x-transition:enter-end="opacity-100 translate-y-0" x-transition:enter-start="opacity-0 translate-y-3" x-transition:enter="transition ease-out duration-300" x-transition:leave-end="opacity-0 translate-y-3" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave="transition ease-out duration-300">
+                                {% for childlink in link.links  %}
+                                    <li class="header__nav-list-item">
+                                        <a class="header__nav-link" href="{{childlink.url}}">{{childlink.title}}</a>
+                                    </li>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                    <li class="header__nav-list-item">
+                        <a class="header__nav-link" href="{{ link.url }}">
+                            {{ link.title }}
+                        </a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
           </nav>
 
           <!-- CART BUTTON / ACCOUNT LINKS IF ENABLED -->
           <div>
-              <button type="button" x-on:click="searchBarOpen = true">
+              {%- comment -%} <button type="button" x-on:click="searchBarOpen = true">
                   {% render 'icon-search' %}
-              </button>
+              </button> {%- endcomment -%}
+
               {%- comment -%} <a href="{{ routes.cart_url }}">
                   {% render 'icon-shopping-cart' %}
                   {% if cart.item_count > 0 %}
@@ -73,36 +71,34 @@
                         <button onclick="clearCart();">Clear cart</button>
 
 
-                        <div>
-                            <form action="{{ routes.cart_url }}" method="POST" novalidate>
+                        <form class="header__cart-form" action="{{ routes.cart_url }}" method="POST" novalidate>
+                            <div>
                                 <div>
-                                    <div>
-                                        {% for item in cart.items %}
+                                    {% for item in cart.items %}
+                                        <div>
                                             <div>
-                                                <div>
-                                                    <a href="{{ item.url }}">
-                                                        {% if item.image %}
+                                                <a href="{{ item.url }}">
+                                                    {% if item.image %}
                                                             <img src="{{ item.image | img_url: 'small'}}" alt="{{ item.title | escape }}">
-                                                        {% else %}
+                                                    {% else %}
                                                             {{ 'product-1' | placeholder_svg_tag: 'h-20 w-20 object-cover border' }}
-                                                        {% endif %}
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="{{ item.url }}">{{ item.product.title | truncatewords: 5 }}</a>
-                                                </div>
-                                                <div>
-                                                    {{ item.line_price | money }}
-                                                </div>
-                                                <div>
-                                                    <input name="updates[]" value="{{ item.quantity }}" min="1" type="number" id="updates_{{ forloop.index }}">
-                                                </div>
+                                                    {% endif %}
+                                                </a>
                                             </div>
-                                        {% endfor %}
-                                    </div>
+                                            <div>
+                                                <a href="{{ item.url }}">{{ item.product.title | truncatewords: 5 }}</a>
+                                            </div>
+                                            <div>
+                                                {{ item.line_price | money }}
+                                            </div>
+                                            <div>
+                                                <input name="updates[]" value="{{ item.quantity }}" min="1" type="number" id="updates_{{ forloop.index }}">
+                                            </div>
+                                        </div>
+                                    {% endfor %}
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
 
                         <div>
                             <h3>Total</h3>
@@ -116,29 +112,21 @@
                   
                   {% else %}
                     <div>
-                        <div>
-                            <h1>Your cart is empty</h1>
-                  
-                            <div>
-                                <a href="{{ routes.all_products_collection_url }}">Continue shopping</a>
-                            </div>
-                        </div>
+                        <h1>Your cart is empty</h1>
+                        <a href="{{ routes.all_products_collection_url }}">Continue shopping</a>
                     </div>
                   {% endif %}
             </div>
 
-            <!-- Link to open the modal -->
-            <a href="#ex1" rel="modal:open">{% render 'icon-shopping-cart' %}</a>
-
-              {% if shop.customer_accounts_enabled %}
+            {% if shop.customer_accounts_enabled %}
                   {% if customer %}
-                      <a href="{{ routes.account_url }}">Account</a>
+                      <a class="header__customer-account-link" href="{{ routes.account_url }}">Account</a>
                       {{ 'Logout' | customer_logout_link | replace: '<a', '<a' }}
                   {% else %}
                       {{ 'Login' | customer_login_link | replace: '<a', '<a' }}
                       {{ 'Register' | customer_register_link | replace: '<a', '<a' }}
                   {% endif %}
-              {% endif %}
+            {% endif %}
           </div>
 
           <!-- MOBILE MENU CONTAINER -->
@@ -148,12 +136,6 @@
                       <!-- MOBILE MENU HEADER TITLE PLUS CLOSE BUTTON -->
                       <div>
                           <div>
-                              <h1>
-                                {{ section.settings.mobile_menu_title }}
-                              </h1>
-                          </div>
-
-                          <div>
                               <button type="button" x-on:click="mobileMenuOpen = false">
                                   {% render 'icon-close' %}
                               </button>
@@ -162,7 +144,8 @@
 
                       <!-- NAVIGATION LINKS FOR MOBILE MENU -->
                       <div>
-                          <nav>
+                          <nav class="header__nav">
+                            <ul class="header__nav-list">
                               {% for link in section.settings.menu.links %}
                                   {% if link.links != blank %}
                                       {% assign mobile_link_handle = link.handle | replace: "-", "_"  %}
@@ -174,20 +157,23 @@
 
                                           <div x-show="{{ mobile_link_handle }}">
                                               {% for childlink in link.links  %}
+                                                <li class="header__nav-list-item">
                                                   <a href="{{childlink.url}}">
-                                                      <span>
-                                                        {{childlink.title}}
-                                                      </span>
+                                                    {{childlink.title}}
                                                   </a>
+                                                </li>
                                               {% endfor %}
                                           </div>
                                       </div>
                                   {% else %}
+                                    <li>
                                       <a href="{{ link.url }}">
                                         {{ link.title }}
                                       </a>
+                                    </li>
                                   {% endif %}
                               {% endfor %}
+                            </ul>
                           </nav>
                       </div>
                   </div>
@@ -196,7 +182,7 @@
       </div>
   </div>
 
-  <div x-show="searchBarOpen">
+  {%- comment -%} <div x-show="searchBarOpen">
       <button type="button" x-on:click="searchBarOpen = false">
           {% render 'icon-close' %}
       </button>
@@ -210,7 +196,8 @@
               </div>
           </form>
       </div>
-  </div>
+  </div> {%- endcomment -%}
+
 </div>
 
 {% schema %}

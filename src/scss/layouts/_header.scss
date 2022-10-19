@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.header {
+  width: 100%;
+  position: absolute;
+  &__wrapper {
+    border-bottom: 1px solid $mobileHeaderBorderColor;
+  }
+  &__nav--desktop {
+    display: none;
+  }
+  &__nav--mobile {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+    align-items: center;
+  }
+}
