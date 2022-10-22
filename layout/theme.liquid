@@ -23,13 +23,17 @@
     </style>
   </head>
   <body>
-    <header class="header">
-        {%- if template.name != "index" -%}
-          Header
+    <div>
+      {%- if template.name != "index" -%}
+        <header class="header-secondary">
+          {% section 'header-secondary' %}
+        </header>    
         {%- else -%}
+        <header class="header">
           {% section 'header' %}
-        {%- endif -%}
-    </header>
+        </header>
+      {%- endif -%}
+    </div>
 
     <main role="main">
       {{ content_for_layout }}
