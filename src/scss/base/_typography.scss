@@ -73,18 +73,6 @@ body {
         letter-spacing: 1.07143px;
         text-transform: uppercase;
     }
-    &__link {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 13px;
-        line-height: 18px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: $primaryBlack;
-        mix-blend-mode: normal;
-        opacity: 0.5;
-        text-decoration: none;
-    }
 }
 
 .about {
@@ -140,7 +128,7 @@ body {
     &__copyright-text {
         font-style: normal;
         font-weight: 700;
-        font-size: 15px;
+        font-size: 12px;
         line-height: 25px;
         color: $white;
         mix-blend-mode: normal;
@@ -149,5 +137,121 @@ body {
     }
     &__copyright-text a {
         color: $white;
+    }
+}
+
+.collection {
+    &__title {
+        color: $white;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 38px;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+}
+
+.product-card {
+    &__tag {
+        color: $darkOrange;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+    }
+    &__card-title {
+        color: $primaryBlack;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 38px;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    &__description {
+        color: $primaryBlack;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+        text-align: center;
+        color: #000000;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+    &__link {
+        color: $white;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+}
+
+.product-details {
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 0.857143px;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    &__description {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+        color: #000000;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+    &__in-the-box-wrapper-col-1 {
+        color: $darkOrange;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 25px;
+    }
+    &__in-the-box-wrapper-col-2 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+        color: #000000;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+}
+
+.recommeded-products {
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: 0.857143px;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    &__product-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+        text-align: center;
+        letter-spacing: 1.71429px;
+        text-transform: uppercase;
+        color: #000000;
     }
 }
