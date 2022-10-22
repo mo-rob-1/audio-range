@@ -1,10 +1,14 @@
-<section>
-    <h1>{{ section.settings.title }}</h1>
+<section class="recommeded-products">
+    <h1 class="recommeded-products__title">{{ section.settings.title }}</h1>
     {%- for block in section.blocks -%}
-        <div>
-            <h2>{{ block.settings.title }}</h2>
-            <img src="{{ block.settings.image | img_url: 'large' }}" alt="{{ block.settings.product }}">
-            <a href="{{ block.settings.link }}">See Product</a>
+        <div class="recommeded-products__product-wrapper">
+            {%- comment -%} <img class="recommeded-products__product-image" src="{{ block.settings.image | img_url: 'large' }}" alt="{{ block.settings.product }}"> {%- endcomment -%}
+            <img class="recommeded-products__product-image" src="{{ block.settings.image_mobile | img_url: 'large' }}" alt="{{ block.settings.product }}">
+            <h2 class="recommeded-products__product-title">{{ block.settings.title }}</h2>
+
+            <div class="recommeded-products__product-link-wrapper">
+                <a class="recommeded-products__product-link" href="{{ block.settings.link }}">See Product</a>
+            </div>
         </div>
       {%- endfor -%}
 </section>
@@ -30,6 +34,11 @@
                         "type": "text",
                         "id": "title",
                         "label": "Product Title"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_mobile",
+                        "label": "Mobile Image"
                     },
                     {
                         "type": "image_picker",
