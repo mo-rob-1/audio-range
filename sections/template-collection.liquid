@@ -1,9 +1,7 @@
-<div>
+<section class="collection">
     {% paginate collection.products by section.settings.number_of_products_per_page %}
-        <h1>{{ collection.title }}</h1>
-
-        <div>
-            <div>
+        <h1 class="collection__title">{{ collection.title }}</h1>
+            <div class="collection__products">
                 {% for product in collection.products %}
                     {% render 'product-card', product_product: product %}
                     {%- comment -%} <div>
@@ -31,11 +29,10 @@
                     <p>No products in this collection</p>
                 {% endfor %}
             </div>
-        </div>
 
         {% render 'pagination', pagination: paginate %}
     {% endpaginate %}
-</div>
+</section>
 
 {% schema %}
 

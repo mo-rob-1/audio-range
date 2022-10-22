@@ -1,9 +1,9 @@
-<div class="pattern">
-    <div class="image-wrapper">
+<div class="pattern product-card">
+    <div class="product-card__image-wrapper">
       <a href="{{ product_product.url }}">
         {% if product_product.featured_image %}
           <div>
-            <img src="{{ product_product.featured_image | img_url: 'medium' }}" alt="{{ product_product.featured_image.alt }}"/>
+            <img class="product-card__image" src="{{ product_product.featured_image | img_url: 'medium' }}" alt="{{ product_product.featured_image.alt }}"/>
           </div>
 
         {% else %}
@@ -12,18 +12,18 @@
       </a>
     </div>
 
-    <div class="text-wrapper">
+    <div class="text-wrapper product-card__text-wrapper">
       {% if product_product.tags contains 'New Product' %}
-        <div class="new-tag">
-          <span class="text-sm font-bold text-white uppercase">New Product</span>
+        <div class="product-card__tag-wrapper">
+          <span class="product-card__tag">New Product</span>
         </div>
       {% endif %}
 
-      <h2>{{ product_product.title }}</h2>
+      <h2 class="product-card__title">{{ product_product.title }}</h2>
 
-      <p class="pattern-desc">{{ product_product.description }}</p>
+      <p class="pattern-desc product-card__description">{{ product_product.description }}</p>
 
-      <a href="{{ product_product.url }}">
+      <a class="product-card__link" href="{{ product_product.url }}">
         See Product
       </a>
     </div>

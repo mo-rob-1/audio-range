@@ -1,7 +1,6 @@
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
-<div>
-  <div>
+<section class="product">
     <div>
       {% for media in product.media %}
         <div>
@@ -15,33 +14,32 @@
         <input type="hidden" name="id" value="{{ selected_variant.id }}">
 
         {% if product.tags contains 'New Product' %}
-          <div class="new-tag">
-            <span class="text-sm font-bold text-white uppercase">New Product</span>
-          </div>
+            <p class="product__tag">New Product</p>
         {% endif %}
 
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'title' %}
-              <div>
-                <h1>
+                <h1 class="product__title">
                   {{ product.title }}
                 </h1>
-              </div>
 
             {% when 'description' %}
-              <div>
-                <p>
+                <p class="product__description">
                   {{ product.description }}
                 </p>
-              </div>
 
             {% when 'price' %}
               <div id="price-{{ section.id }}">
-                <span>{{ selected_variant.compare_at_price | money }}
-                </span>
-                <span>{{ selected_variant.price | money }}
-                </span>
+
+                <div class="product__price-wrapper">
+                  <span class="product__price">
+                    {{ selected_variant.compare_at_price | money }}
+                  </span>
+                  <span class="product__price">
+                    {{ selected_variant.price | money }}
+                  </span>
+                </div>
 
                 {% if selected_variant.price < selected_variant.compare_at_price %}
                   <span>Sale</span>
@@ -52,7 +50,8 @@
                 {% unless product.has_only_default_variant %}
                   <variant-selector data-url="{{ product.url }}" data-section="{{ section.id }}">
                     {% for option in product.options_with_values %}
-                      <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}
+                      <label for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                        {{ option.name }}
                       </label>
 
                       <div>
@@ -66,7 +65,6 @@
                       </div>
 
                       <script type="application/json">
-
                         {{ product.variants | json }}
                       </script>
 
@@ -75,60 +73,66 @@
                 {% endunless %}
               </div>
 
-            {% when 'quantity' %}
-              <div>
-                <div>
-                  <input id="Quantity-{{ section.id }}" min="1" name="quantity" type="number" value="1">
-                </div>
-              </div>
+            <div class="product__inputs-wrapper">
+              {% when 'quantity' %}
+                {% render 'product-quantity-selector' %}
 
-            {% when 'checkout_buttons' %}
-              <div>
-                <button type="submit" name="add" {% if selected_variant.available == false %} disabled {% endif %}>
-                  {% if selected_variant.available == false %}
-                    Sold out
-                  {% else %}
-                    Add to cart
-                  {% endif %}
-                </button>
-              </div>
+              {% when 'checkout_buttons' %}
+                <div class="product__btn-wrapper">
+                  <button class="product__btn" type="submit" name="add" {% if selected_variant.available == false %} disabled {% endif %}>
+                    {% if selected_variant.available == false %}
+                      Sold out
+                    {% else %}
+                      Add to cart
+                    {% endif %}
+                  </button>
+                </div>
+            </div> 
+
             {% else %}
 
           {% endcase %}
         {% endfor %}
       {% endform %}
     </div>
+</section>
+
+  <div class="product-details">
+    <div class="product-details__col-1">
+      <h1 class="product-details__title">Features</h1>
+      <p class="product-details__description">{{ product.metafields.custom.product_features | newline_to_br }}</p>
+    </div>
+
+    <div class="product-details__col-2">
+      <h1 class="product-details__title">In the Box</h1>
+
+      <div class="product-details__in-the-box-wrapper">
+        <div class="product-details__in-the-box-wrapper-col-1">
+          {% for item_quantity in product.metafields.custom.in_the_box_item_quantity.value %}
+            <ul class="product-details__in-the-box-list">
+              <li class="product-details__in-the-box-list-item">{{ item_quantity }}x</li>
+            </ul>
+          {% endfor %}
+        </div>
+
+        <div class="product-details__in-the-box-wrapper-col-2">
+          {% for item in product.metafields.custom.in_the_box_items.value %}
+            <ul class="product-details__in-the-box-list">
+              <li class="product-details__in-the-box-list-item">{{ item }}</li>
+            </ul>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <h1>Features</h1>
-    <p>{{ product.metafields.custom.product_features }}</p>
-  </div>
-
-<div>
-  <h1>In the Box</h1>
-  <div>
-    {% for item_quantity in product.metafields.custom.in_the_box_item_quantity.value %}
-      <ul>
-        <li>{{ item_quantity }}x</li>
-      </ul>
-    {% endfor %}
-  </div>
-
-  <div>
-    {% for item in product.metafields.custom.in_the_box_items.value %}
-      <ul>
-        <li>{{ item }}</li>
-      </ul>
-    {% endfor %}
-  </div>
-</div>
-
-<div>
-{% for image in product.metafields.custom.featured_images.value %}
-  <img src="{{ image | img_url: "large" }}">
-{% endfor %}
-</div>
+  <section class="product-images">
+    <div class="product-images__wrapper">
+      {% for image in product.metafields.custom.featured_images.value %}
+        <img class="product-images__image" src="{{ image | img_url: "large" }}">
+      {% endfor %}
+    </div>
+  </section>
 
 </div>
 

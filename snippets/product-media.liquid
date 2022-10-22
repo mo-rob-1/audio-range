@@ -1,6 +1,6 @@
 {% case media.media_type %}
   {% when 'image' %}
-    <img src="{{ media | img_url: 'large' }}" alt="{{ media.preview_image.alt }}">
+    <img class="product__image" src="{{ media | img_url: 'large' }}" alt="{{ media.preview_image.alt }}">
 
   {% when 'external_video' %}
     {{ media | external_video_tag }}
