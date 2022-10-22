@@ -1,6 +1,6 @@
 <section class="about">
   {%- for block in section.blocks -%}
-    <div class="about__content-wrapper">
+    <div class="about__content-wrapper about__content-wrapper--product-pg-padding">
       <img class="about__img" src="{{ block.settings.about_image_mobile | img_url: 'large' }}" alt="{{ block.settings.about_title }}">
       {%- comment -%} <img src="{{ block.settings.about_image_tablet | img_url: 'large' }}" alt="{{ block.settings.about_title }}">
       <img src="{{ block.settings.about_image_desktop | img_url: 'large' }}" alt="{{ block.settings.about_title }}"> {%- endcomment -%}
