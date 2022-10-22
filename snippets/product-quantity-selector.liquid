@@ -1,0 +1,13 @@
+<td>
+    <div class="form-row justify-content-center">
+      <div class="form-group mb-0">
+        <div class="input-group mx-auto mb-0">
+          <div class="number-input">
+            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+            <input id="Quantity-{{ section.id }}" min="1" placeholder="0" name="quantity" value="1" type="number">
+            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+</td>
