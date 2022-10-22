@@ -1,6 +1,6 @@
 <section class="list-collections">
-    <h1>{{ section.settings.title }}</h1>
-
+    <h1 class="list-collections__section-title">{{ section.settings.title }}</h1>
+    
     <div class="list-collections__wrapper">
         {% for collection in collections %}
             {% if collection.all_products_count > 0 %}
