@@ -1,0 +1,126 @@
+@use '../abstracts' as *;
+
+.modal {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    width: 100%;
+}
+.modal-top-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.modal-cart-product-image {
+    border-radius: 8px;
+    width: 70%;
+}
+.modal-wrapper-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.modal-input {
+    width: 100%;
+}
+.modal-product-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000000;
+    margin: 0;
+}
+.modal-product-price {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin-top: 0;
+}
+.total-price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.total-price-heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+.total-price {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+.modal-checkout-btn {
+    background-color: $darkOrange;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.remove-all-btn {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    text-decoration-line: underline;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.cart-empty-text {
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+}
+.cart-empty-cta-link {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: block;
+    background-color: $darkOrange;
+    text-decoration: none;
+    width: 100%;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.product-card {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+    &__image {
+        border-radius: 8px;
+    }
+    &__tag-wrapper {
+        margin-top: 2rem;
+    }
+    &__description {
+        margin-bottom: 2.5rem;
+    }
+}
