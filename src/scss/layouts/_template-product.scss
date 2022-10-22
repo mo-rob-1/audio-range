@@ -1,0 +1,118 @@
+@use '../abstracts' as *;
+
+.product {
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+    margin-top: 2rem;
+    &__image {
+        border-radius: 8px;
+    }
+    &__tag {
+        margin-top: 1.8rem;
+        color: $darkOrange;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+    }
+    &__title {
+        color: $primaryBlack;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 38px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    &__description {
+        color: $primaryBlack;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+    &__price-wrapper {
+        margin-top: 22px;
+    }
+    &__price {
+        color: $primaryBlack;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 1.28571px;
+        text-transform: uppercase;
+    }
+    &__inputs-wrapper {
+        margin-top: 22px;
+        // background-color: $darkOrange;
+        display: inline-flex;
+    }
+    &__btn-wrapper {
+        display: flex;
+    }
+}
+
+.product-details {
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+    &__in-the-box-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+    }
+    &__in-the-box-wrapper {
+        display: flex;
+    }
+    &__col-1 {
+        margin-top: 6rem;
+    }
+    &__col-2 {
+        margin-top: 6rem;
+    }
+    &__in-the-box-wrapper-col-2 {
+        margin-left: 1rem;
+    }
+}
+
+.product-images {
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+    &__wrapper {
+        display: grid;
+        gap: 1.3rem;
+        margin-top: 5rem;
+    }
+    &__image {
+        border-radius: 8px;
+    }
+}
+
+.recommeded-products {
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+    text-align: center;
+    margin-top: 7rem;
+    margin-bottom: 10rem;
+    &__title {
+        margin-bottom: 2.3rem;
+    }
+    &__product-title {
+        margin-top: 2rem;
+    }
+    &__product-image {
+        border-radius: 8px;
+    }
+    &__product-link-wrapper {
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+    }
+}

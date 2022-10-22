@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.collection {
+    &__title {
+        height: 100px;
+        margin: 0;
+        background-color: $primaryBlack;
+        text-align: center;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    &__products {
+        display: grid;
+        gap: 8rem;
+        margin-top: 4rem;
+        margin-bottom: 12rem;
+    }
+}
