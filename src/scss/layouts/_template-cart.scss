@@ -1,0 +1,90 @@
+@use '../abstracts' as *;
+
+.cart {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    @include responsive(laptop-lg) {
+        padding-top: 6rem;
+        padding-bottom: 7rem;
+    }
+    &__empty-title {
+        margin-bottom: 3rem;
+    }
+    &__input {
+        width: 100%;
+    }
+    &__main-heading-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+    &__main-heading-title {
+        margin: 0;
+    }
+    &__main-heading-link {
+        color: $primaryBlack;
+        border: none;
+        background: none;
+        text-decoration: underline;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+        text-decoration-line: underline;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+    &__price {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include responsive(tablet) {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    &__btn-wrapper {
+        display: grid;
+        gap: .8rem;
+        @include responsive(tablet) {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+    &__btn {
+        width: 100%;
+        margin-right: .8rem;
+        background: $darkOrange;
+        color: $white;
+        padding: 1rem 1.8rem;
+        border: none;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    &__form {
+        @include responsive(tablet) {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 2rem;
+        }
+        @include responsive(laptop-lg) {
+            margin-top: 1rem;
+            gap: 6rem;
+        }
+    }
+}

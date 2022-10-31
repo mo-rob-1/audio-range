@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.table {
+    width: 100%;
+    &__head {
+        text-align: left;
+    }
+    &__img {
+        width: 60%;
+        margin-bottom: 1rem;
+        @include responsive(laptop) {
+            width: 50%;
+        }
+    }
+    &__input {
+        width: 40%;
+        padding: .5rem;
+        @include responsive(laptop) {
+            width: 20%;
+        }
+    }
+    &__product-title {
+        text-decoration: none;
+        color: $primaryBlack;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+    &__data {
+        padding-top: 2.5rem;
+    }
+    &__remove-product-wrapper {
+        margin-top: 6px;
+    }
+    &__remove-product {
+        color: red;
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
