@@ -8,6 +8,7 @@
           "settings": {
             "hero_title": "New Product",
             "image_mobile": "shopify:\/\/shop_images\/image-header.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/image-header_92ce7291-ae91-4b16-879f-787f3ffc3379.jpg",
             "image_desktop": "shopify:\/\/shop_images\/image-hero.jpg",
             "product_name": "XX99 Mark II Headphones",
             "product_description": "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
@@ -54,6 +55,7 @@
           "type": "product",
           "settings": {
             "image_mobile": "shopify:\/\/shop_images\/image-speaker-zx7.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/image-speaker-zx7_599bbc9f-6d8f-49ed-aa33-a9769f41b4f0.jpg",
             "image_desktop": "shopify:\/\/shop_images\/image-speaker-zx7_68fe7936-b2f4-4013-b544-640a8f0e9a25.jpg",
             "product_name": "ZX7 Speaker",
             "product": "zx7-speaker"
@@ -73,6 +75,7 @@
           "type": "product",
           "settings": {
             "image_mobile": "shopify:\/\/shop_images\/image-earphones-yx1.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/image-earphones-yx1_7c643b8e-4dee-4b05-a6a4-e25abeeac98b.jpg",
             "image_desktop": "shopify:\/\/shop_images\/image-earphones-yx1_a9a2d5b0-0276-495b-9540-4b781c9a413f.jpg",
             "product_name": "YX1 Earphones",
             "product": "yx1-wireless-earphones"

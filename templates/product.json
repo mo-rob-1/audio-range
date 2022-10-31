@@ -52,7 +52,9 @@
           "type": "product",
           "settings": {
             "title": "ZX9 Speaker",
-            "image": "shopify:\/\/shop_images\/image-category-page-preview.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/image-zx9-speaker.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/image-zx9-speaker_6f6df914-2fda-4f9e-b33c-6c59da4af67e.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/image-zx9-speaker_d7add974-51da-4ef0-9509-2a0595e42c7a.jpg",
             "link": "shopify:\/\/products\/zx9-speaker"
           }
         },
@@ -60,7 +62,9 @@
           "type": "product",
           "settings": {
             "title": "XX9 Mark I",
-            "image": "shopify:\/\/shop_images\/image-category-page-preview_a1038934-ba5c-411a-bde1-1c6d9f2e1234.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/image-xx99-mark-one-headphones.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/image-xx99-mark-one-headphones_04e6f967-36f4-4c2e-b261-366794e1f365.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/image-xx99-mark-one-headphones_8a6ddde7-48ba-46bb-9fd4-fb37500f34fb.jpg",
             "link": "shopify:\/\/products\/xx99-mark-i"
           }
         },
@@ -68,7 +72,9 @@
           "type": "product",
           "settings": {
             "title": "XX59",
-            "image": "shopify:\/\/shop_images\/image-category-page-preview_d4756acb-4898-49dc-955a-e674d26020ca.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/image-xx59-headphones.jpg",
+            "image_tablet": "shopify:\/\/shop_images\/image-xx59-headphones_7912beac-12ae-4e2b-81e6-7b3b12e2fa59.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/image-xx59-headphones_c8932b35-3425-4b36-a667-ad9bbeefded4.jpg",
             "link": "shopify:\/\/products\/xx59-headphones"
           }
         }
