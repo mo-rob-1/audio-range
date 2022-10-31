@@ -3,15 +3,78 @@
 .product-card {
     text-align: center;
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1200px;
     width: 90%;
+    @include responsive(laptop) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 7rem;
+    }
     &__image {
         border-radius: 8px;
     }
+    &__image--default {
+        @include responsive(tablet) {
+            display: none;
+        }
+        @include responsive(laptop) {
+            display: block;
+        }
+    }
+    &__image--tablet {
+        display: none;
+        @include responsive(tablet) {
+            display: block;
+        }
+        @include responsive(laptop) {
+            display: none;
+        }
+    }
+    &__text-wrapper {
+        @include responsive(tablet) {
+            margin-top: 2.5rem;
+        }
+        @include responsive(laptop) {
+            margin-top: 0;
+        }
+    }
+    &__text-wrapper--width {
+        @include responsive(tablet) {
+            display: inline-flex;
+            width: 80%;
+        }
+        @include responsive(laptop) {
+            text-align: left;
+            align-items: center;
+            width: 100%;
+        }
+    }
     &__tag-wrapper {
         margin-top: 2rem;
+        @include responsive(tablet) {
+            margin-top: 1rem;
+        }
     }
     &__description {
         margin-bottom: 2.5rem;
     }
+    &__title {
+        @include responsive(tablet) {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            display: inline-block;
+            width: 80%;
+        }
+        @include responsive(laptop) {
+            width: 100%;
+        }
+    }
 }
+
+.product-card:nth-child(even) {
+    @include responsive(laptop) {
+        grid-auto-flow: dense;
+        direction: rtl;
+    }
+} 

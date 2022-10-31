@@ -5,6 +5,9 @@
   position: absolute;
   &__wrapper {
     border-bottom: 1px solid $mobileHeaderBorderColor;
+    @include responsive(tablet) {
+      border-bottom: none;
+    }
   }
   &__nav--desktop {
     display: none;
@@ -15,8 +18,83 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1200px;
     width: 90%;
     align-items: center;
+    @include responsive(tablet) {
+      border-bottom: 1px solid $mobileHeaderBorderColor;
+      align-items: initial;
+    }
+    @include responsive(laptop) {
+      align-items: center;
+    }
+  }
+  &__site-name {
+    @include responsive(tablet) {
+      flex: auto;
+      margin-left: 2.5rem;
+      top: 2px;
+      position: relative;
+    }
+    @include responsive(laptop) {
+      margin-left: 0;
+      display: contents;
+    }
+  }
+  &__hamburger-btn {
+    @include responsive(laptop) {
+      display: none;
+    }
+  }
+  &__cart-count {
+    background-color: $darkOrange;
+    color: $white;
+    text-align: center;
+    border-radius: 100%;
+    text-decoration: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    bottom: 1.4rem;
+    right: 1rem;
+  }
+  &__cart-icon {
+    text-decoration: none;
+  }
+}
+
+.desktop__list {
+  @include responsive(laptop) {
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+}
+
+.header__nav-list-item {
+  @include responsive(laptop) {
+    list-style-type: none;
+    margin-right: 2.5rem;
+  }
+}
+
+.desktop__nav-list-item-link {
+  @include responsive(laptop) {
+    color: $white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 25px;  
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.desktop__nav-wrapper {
+  display: none;
+  @include responsive(laptop) {
+    display: block;
   }
 }

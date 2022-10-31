@@ -10,44 +10,93 @@
     border-radius: 8px;
     text-align: center;
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1200px;
     width: 90%;
     margin-bottom: 2rem;
+    padding-bottom: 5rem;
+    @include responsive(laptop) {
+        padding: 0;
+        background-image: url('https://cdn.shopify.com/s/files/1/0658/9438/3868/files/pattern-circle-desktop.png?v=1666816143');
+        background-position: left;
+        background-size: contain;
+        text-align: left;
+    }
+    @include responsive(laptop-lg) {
+        margin-bottom: 3rem;
+    }
+    &__wrapper {
+        @include responsive(tablet) {
+            display: inline-block;
+            width: 50%;
+        }
+        @include responsive(laptop) {
+            display: flex;
+            width: 100%;
+            padding-left: 5rem;
+            padding-right: 5rem;
+            padding-top: 5rem;
+        }
+        @include responsive(laptop-lg) {
+            width: 100%;
+            padding-right: 10rem;
+            padding-left: 10rem;
+            padding-top: 8rem;
+        }
+    }
     &__img {
         width: 50%;
+        @include responsive(laptop) {
+            width: 40%;
+            margin-right: 5rem;
+        }
+        @include responsive(laptop-lg) {
+            margin-right: 10rem;
+            width: 60%;
+        }
     }
-    &__product-name {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 40px;
-        text-align: center;
-        letter-spacing: 1.28571px;
-        text-transform: uppercase;
-        color: $white;
-    }
-    &__description {
-        margin-bottom: 2.4rem;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 25px;
-        text-align: center;
-        color: $white;
-        mix-blend-mode: normal;
-        opacity: 0.75;
+    &__col-wrapper {
+        @include responsive(laptop-lg) {
+        
+        }
     }
 }
 
 .featured-product-two {
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1200px;
     width: 90%;
     position: relative;
     margin-bottom: 2rem;
+    @include responsive(laptop-lg) {
+        margin-bottom: 3rem;
+    }
     &__img {
         display: block;
         border-radius: 8px;
+    }
+    &__img--mobile {
+        display: block;
+        @include responsive(tablet) {
+            display: none;
+        }
+    }
+    &__img--tablet {
+        display: none;
+        @include responsive(tablet) {
+            display: block;
+        }
+        @include responsive(laptop) {
+            display: none;
+        }
+    }
+    &__img--desktop {
+        display: none;
+        @include responsive(tablet) {
+            display: none;
+        }
+        @include responsive(laptop) {
+            display: block;
+        }
     }
     &__text-wrapper {
         text-align: left;
@@ -55,6 +104,12 @@
         top: 30%;
         padding-left: 2rem;
         padding-right: 2rem;
+        @include responsive(tablet) {
+            padding-left: 4rem;
+        }
+        @include responsive(laptop-lg) {
+            padding-left: 6rem;
+        }
     }
     &__product-name {
         margin-top: 0;
@@ -64,25 +119,72 @@
 
 .featured-product-three {
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1200px;
     width: 90%;
+    @include responsive(tablet) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 1rem;
+        margin-bottom: 5rem;
+    }
+    @include responsive(laptop) {
+        gap: 1.7rem;
+    }
+    @include responsive(laptop-lg) {
+        margin-bottom: 12rem;
+    }
     &__img {
         border-radius: 8px;
         display: block;
         margin-bottom: 2rem;
+        @include responsive(tablet) {
+            margin-bottom: 0;
+        }
     }
     &__text-wrapper {
         background-color: $primaryGray;
         border-radius: 8px;
-        padding-left: 1.8rem;
+        padding-left: 2rem;
         height: 200px;
         display: flex;
         flex-direction: column;
         align-items: start;
         justify-content: center;
+        @include responsive(tablet) {
+            height: initial;
+            padding-left: 3rem;
+        }
+        @include responsive(laptop-lg) {
+            padding-left: 5rem;
+        }
     }
     &__product-name {
         margin-top: 0;
         margin-bottom: 1.8rem;
+    }
+    &__img--mobile {
+        display: block;
+        @include responsive(tablet) {
+            display: none;
+        }
+    }
+    &__img--tablet {
+        display: none;
+        @include responsive(tablet) {
+            display: block;
+        }
+        @include responsive(laptop) {
+            display: none;
+        }
+    }
+    &__img--desktop {
+        display: none;
+        @include responsive(tablet) {
+            display: none;
+        }
+        @include responsive(laptop) {
+            display: block;
+        }
     }
 }

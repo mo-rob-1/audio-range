@@ -106,5 +106,28 @@
         mix-blend-mode: normal;
         opacity: 0.5;
         text-decoration: none;
+        margin-top: 5px;
+        @include responsive(tablet) {
+            margin-top: 0;
+        }
+    }
+}
+
+.cart {
+    &__continue-shopping-link {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $white;
+        background: $darkOrange;
+        padding: 1rem 1.8rem;
+        margin-top: 1rem;
+    }
+    &__continue-shopping-link-wrapper {
+        text-align: center;
     }
 }

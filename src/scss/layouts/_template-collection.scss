@@ -9,11 +9,17 @@
         display: grid;
         justify-content: center;
         align-items: center;
+        @include responsive(tablet) {
+            height: 260px;
+        }
     }
     &__products {
         display: grid;
         gap: 8rem;
         margin-top: 4rem;
         margin-bottom: 12rem;
+        @include responsive(tablet) {
+            margin-top: 7rem;
+        }
     }
 }
