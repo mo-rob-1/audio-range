@@ -1,11 +1,12 @@
 {%- for block in section.blocks -%}
   <section class="hero">
-    <img class="hero__image" src="{{ block.settings.image_mobile | img_url: 'master' }}">
+    <img class="hero__image hero__image--mobile" src="{{ block.settings.image_mobile | img_url: 'master' }}">
 
-    {%- comment -%} {%- if block.settings.image_desktop != blank -%}
-      <img class="hero__image hero__image--desktop" src="{{ block.settings.image_desktop | img_url: 'master' }}">
-    {%- endif -%} {%- endcomment -%}
+    <img class="hero__image hero__image--tablet" src="{{ block.settings.image_tablet | img_url: 'master' }}">
 
+    <img class="hero__image hero__image--desktop" src="{{ block.settings.image_desktop | img_url: 'master' }}">
+
+    
     <div class="hero__text-wrapper">
       <p class="hero__tag">
         {{ block.settings.hero_title }}
@@ -18,6 +19,7 @@
       </p>
       <a class="hero__link" href="products/{{ block.settings.product }}">See Product</a>
     </div>
+ 
   </section>
 {%- endfor -%}
 
@@ -40,6 +42,11 @@
             "type": "image_picker",
             "id": "image_mobile",
             "label": "Add Image for Mobile View"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_tablet",
+            "label": "Add Image for Tablet View"
           },
           {
             "type": "image_picker",

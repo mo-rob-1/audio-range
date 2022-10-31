@@ -1,19 +1,23 @@
 {%- for block in section.blocks -%}
   <section class="featured-product-one">
-    <img class="featured-product-one__img" src="{{ block.settings.image_mobile | img_url: 'master' }}">
-    {%- comment -%}
-      <img src="{{ block.settings.image_desktop | img_url: 'master' }}">
-    {%- endcomment -%}
-    <p class="featured-product-one__title">
-      {{ block.settings.hero_title }}
-    </p>
-    <h1 class="featured-product-one__product-name">
-      {{ block.settings.product_name }}
-    </h1>
-    <p class="featured-product-one__description">
-      {{ block.settings.product_description }}
-    </p>
-    <a class="featured-product-one__link" href="products/{{ block.settings.product }}">See Product</a>
+    <div class="featured-product-one__wrapper">
+      <img class="featured-product-one__img" src="{{ block.settings.image_mobile | img_url: 'master' }}">
+      {%- comment -%}
+        <img src="{{ block.settings.image_desktop | img_url: 'master' }}">
+      {%- endcomment -%}
+      <div class="featured-product-one__col-wrapper">
+        <p class="featured-product-one__title">
+          {{ block.settings.hero_title }}
+        </p>
+        <h1 class="featured-product-one__product-name">
+          {{ block.settings.product_name }}
+        </h1>
+        <p class="featured-product-one__description">
+          {{ block.settings.product_description }}
+        </p>
+        <a class="featured-product-one__link" href="products/{{ block.settings.product }}">See Product</a>
+      </div>
+    </div>
   </section>
 {%- endfor -%}
 

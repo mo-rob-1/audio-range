@@ -4,27 +4,44 @@
             <div class="collection__products">
                 {% for product in collection.products %}
                     {% render 'product-card', product_product: product %}
-                    {%- comment -%} <div>
+                    {%- comment -%} <div class="pattern product-card">
+                      <div class="product-card__image-wrapper">
                         <a href="{{ product.url }}">
                           {% if product.featured_image %}
                             <div>
-                              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}"/>
+                              <img class="product-card__image product-card__image--default" src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.featured_image.alt }}"/>
+                  
+                              {% assign media = product.media | where: 'position', 2 %}
+                              {% if media.size > 0 %}
+                                <img class="product-card__image product-card__image--tablet" src="{{ media.first | img_url: 'large' }}" alt="{{ media.first.alt }}"/>
+                              {% endif %}
                             </div>
-                    
+                  
                           {% else %}
                             {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}
                           {% endif %}
                         </a>
-                        <div>
-                          <h2>{{ product.title }}</h2>
-                    
-                          <p>{{ product.description }}</p>
-                    
-                          <a href="{{ product.url }}">
+                      </div>
+                  
+                      <div class="product-card__text-wrapper--width text-wrapper">
+                        <div class="product-card__text-wrapper">
+                          {% if product.tags contains 'New Product' %}
+                            <div class="product-card__tag-wrapper">
+                              <span class="product-card__tag">New Product</span>
+                            </div>
+                          {% endif %}
+                  
+                          <h2 class="product-card__title">{{ product.title }}</h2>
+                  
+                          <p class="pattern-desc product-card__description">{{ product.description }}</p>
+                  
+                          <a class="product-card__link" href="{{ product.url }}">
                             See Product
                           </a>
                         </div>
-                      </div> {%- endcomment -%}
+                      </div>
+                  </div> {%- endcomment -%}
+                  
                 {% else %}
                     <p>No products in this collection</p>
                 {% endfor %}

@@ -2,11 +2,12 @@
 
 <section class="product">
     <div>
-      {% for media in product.media %}
+      {%- comment -%} {% for media in product.media %}
         <div>
           {% render 'product-media', media: media %}
         </div>
-      {% endfor %}
+      {% endfor %} {%- endcomment -%}
+        <img class="product__image" src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title | escape }}">
     </div>
 
     <div>

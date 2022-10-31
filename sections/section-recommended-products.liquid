@@ -1,16 +1,21 @@
 <section class="recommeded-products">
     <h1 class="recommeded-products__title">{{ section.settings.title }}</h1>
-    {%- for block in section.blocks -%}
-        <div class="recommeded-products__product-wrapper">
-            {%- comment -%} <img class="recommeded-products__product-image" src="{{ block.settings.image | img_url: 'large' }}" alt="{{ block.settings.product }}"> {%- endcomment -%}
-            <img class="recommeded-products__product-image" src="{{ block.settings.image_mobile | img_url: 'large' }}" alt="{{ block.settings.product }}">
-            <h2 class="recommeded-products__product-title">{{ block.settings.title }}</h2>
 
-            <div class="recommeded-products__product-link-wrapper">
-                <a class="recommeded-products__product-link" href="{{ block.settings.link }}">See Product</a>
+    <div class="recommeded-products__col-wrapper">
+        {%- for block in section.blocks -%}
+            <div class="recommeded-products__product-wrapper">
+                <img class="recommeded-products__product-image recommeded-products__product-image--mobile" src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="{{ block.settings.product }}">
+                <img class="recommeded-products__product-image recommeded-products__product-image--tablet" src="{{ block.settings.image_tablet | img_url: 'master' }}" alt="{{ block.settings.product }}">
+                <img class="recommeded-products__product-image recommeded-products__product-image--desktop" src="{{ block.settings.image_desktop | img_url: 'master' }}" alt="{{ block.settings.product }}">
+
+                <h2 class="recommeded-products__product-title">{{ block.settings.title }}</h2>
+
+                <div class="recommeded-products__product-link-wrapper">
+                    <a class="recommeded-products__product-link" href="{{ block.settings.link }}">See Product</a>
+                </div>
             </div>
-        </div>
-      {%- endfor -%}
+        {%- endfor -%}
+    </div>
 </section>
 
 {% schema %}
@@ -42,8 +47,13 @@
                     },
                     {
                         "type": "image_picker",
-                        "id": "image",
-                        "label": "Image"
+                        "id": "image_tablet",
+                        "label": "Tablet Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image_desktop",
+                        "label": "Desktop Image"
                     },
                     {
                         "type": "url",

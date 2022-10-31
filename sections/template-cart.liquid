@@ -1,41 +1,46 @@
 {% if cart.item_count > 0 %}
-  <div>
-      <div>
-          <div>
-              <h1>Your cart</h1>
-              <a href="{{ routes.all_products_collection_url }}">Continue shopping</a>
-          </div>
+  <div class="cart">
+      <div class="cart__main-heading-wrapper">
+        <h1 class="cart__main-heading-title">Your cart</h1>
+        <a class="cart__main-heading-link" href="{{ routes.all_products_collection_url }}">Continue shopping</a>
       </div>
 
       <div>
-          <form action="{{ routes.cart_url }}" method="POST" novalidate>
-              <table>
-                  <thead>
-                      <th>Product</th>
-                      <th>Quantity</th>
-                      <th>Total Price</th>
+          <form class="cart__form" action="{{ routes.cart_url }}" method="POST" novalidate>
+              <table class="table">
+                  <thead class="table__head">
+                      <th class="table__label">Product</th>
+                      <th class="table__label">Quantity</th>
+                      <th class="table__label">Total Price</th>
                   </thead>
-                  <tbody>
+                  <tbody class="table__body">
                       {% for item in cart.items %}
-                          <tr>
-                              <td>
-                                  <a href="{{ item.url }}">
+                          <tr class="table__row">
+                              <td class="table__data">
+                                  <a class="table__link" href="{{ item.url }}">
                                       {% if item.image %}
-                                          <img src="{{ item.image | img_url: 'small'}}" alt="{{ item.title | escape }}">
+                                          <img class="table__img" src="{{ item.image | img_url: 'small'}}" alt="{{ item.title | escape }}">
                                       {% else %}
                                           {{ 'product-1' | placeholder_svg_tag: 'h-20 w-20 object-cover border' }}
                                       {% endif %}
                                   </a>
+                                  <div>
+                                    <a class="table__product-title" href="{{ item.url }}">{{ item.product.title | truncatewords: 5 }}</a>
+
+                                    <div class="table__remove-product-wrapper">
+                                        <a class="table__remove-product" href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">Remove</a>
+                                    </div>
+                                  </div>
                               </td>
-                              <td>
+                              {%- comment -%} <td class="table__data">
                                   <a href="{{ item.url }}">{{ item.product.title | truncatewords: 5 }}</a>
                                   <span>{{ item.variant.title }}</span>
                                   <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">Remove</a>
+                              </td> {%- endcomment -%}
+                              <td class="table__data">
+                                  <input class="table__input" name="updates[]" value="{{ item.quantity }}" min="1" type="number" id="updates_{{ forloop.index }}">
                               </td>
-                              <td>
-                                  <input name="updates[]" value="{{ item.quantity }}" min="1" type="number" id="updates_{{ forloop.index }}">
-                              </td>
-                              <td>
+                              <td class="table__data">
                                   {{ item.line_price | money }}
                               </td>
                           </tr>
@@ -44,31 +49,34 @@
               </table>
 
               <div>
-                  <div>
+                  {%- comment -%} <div>
                       <div>
                           <label for="cart_notes">Cart notes:</label>
                           <textarea id="cart_notes" name="note"></textarea>
                       </div>
-                  </div>
+                  </div> {%- endcomment -%}
 
                   <div>
                       {% for block in section.blocks %}
                           {% case block.type %}
                               {% when 'subtotal' %}
-                                  <h3>Subtotal:
+                                  <h3 class="cart__price">Subtotal:
                                       <span>
                                           {{ cart.total_price | money }}
                                       </span>
                                   </h3>
-                              {% when 'update_button' %}
-                                  <div>
-                                      <button name="update" type="submit">Update</button>
-                                  </div>
 
-                              {% when 'checkout_button' %}
-                                  <div>
-                                      <button name="checkout" type="submit">Checkout</button>
-                                  </div>
+                               <div class="cart__btn-wrapper">   
+                                    {% when 'update_button' %}
+                                        <div>
+                                            <button class="cart__btn" name="update" type="submit">Update</button>
+                                        </div>
+
+                                    {% when 'checkout_button' %}
+                                        <div>
+                                            <button class="cart__btn" name="checkout" type="submit">Checkout</button>
+                                        </div>
+                                </div>   
                               {% else %}
 
                           {% endcase %}
@@ -80,12 +88,12 @@
   </div>
 
 {% else %}
-  <div>
-      <div>
-          <h1>Your cart is empty</h1>
+  <div class="cart">
+      <div class="cart__wrapper">
+          <h1 class="cart__empty-title">Your cart is empty</h1>
 
-          <div>
-              <a href="{{ routes.all_products_collection_url }}">Continue shopping</a>
+          <div class="cart__continue-shopping-link-wrapper">
+              <a class="cart__continue-shopping-link" href="{{ routes.all_products_collection_url }}">Continue shopping</a>
           </div>
       </div>
   </div>

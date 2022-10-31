@@ -3,7 +3,12 @@
       <a href="{{ product_product.url }}">
         {% if product_product.featured_image %}
           <div>
-            <img class="product-card__image" src="{{ product_product.featured_image | img_url: 'medium' }}" alt="{{ product_product.featured_image.alt }}"/>
+            <img class="product-card__image product-card__image--default" src="{{ product_product.featured_image | img_url: 'large' }}" alt="{{ product_product.featured_image.alt }}"/>
+
+            {% assign media = product_product.media | where: 'position', 2 %}
+            {% if media.size > 0 %}
+              <img class="product-card__image product-card__image--tablet" src="{{ media.first | img_url: 'large' }}" alt="{{ media.first.alt }}"/>
+            {% endif %}
           </div>
 
         {% else %}
@@ -12,19 +17,21 @@
       </a>
     </div>
 
-    <div class="text-wrapper product-card__text-wrapper">
-      {% if product_product.tags contains 'New Product' %}
-        <div class="product-card__tag-wrapper">
-          <span class="product-card__tag">New Product</span>
-        </div>
-      {% endif %}
+    <div class="product-card__text-wrapper--width text-wrapper">
+      <div class="product-card__text-wrapper">
+        {% if product_product.tags contains 'New Product' %}
+          <div class="product-card__tag-wrapper">
+            <span class="product-card__tag">New Product</span>
+          </div>
+        {% endif %}
 
-      <h2 class="product-card__title">{{ product_product.title }}</h2>
+        <h2 class="product-card__title">{{ product_product.title }}</h2>
 
-      <p class="pattern-desc product-card__description">{{ product_product.description }}</p>
+        <p class="pattern-desc product-card__description">{{ product_product.description }}</p>
 
-      <a class="product-card__link" href="{{ product_product.url }}">
-        See Product
-      </a>
+        <a class="product-card__link" href="{{ product_product.url }}">
+          See Product
+        </a>
+      </div>
     </div>
 </div>

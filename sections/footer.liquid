@@ -19,41 +19,75 @@
     </nav>
 
     {%- for block in section.blocks -%}
-      <p class="footer__description">{{ block.settings.footer_description }}</p>
+      <div class="footer__desktop-col-wrapper">
+        <p class="footer__description">{{ block.settings.footer_description }}</p>
+
+        <ul class="footer__social-media-menu footer__social-media-menu--desktop">
+          <li class="footer__social-media-menu-item">
+            <a class="footer__social-media-link footer__facebook-link" href="{{ section.settings.facebook_link }}"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+              aria-describedby="new-window-0">
+              <span>{% render 'icon-facebook' %}</span>
+            </a>
+          </li>
+          <li class="footer__social-media-menu-item">
+            <a class="footer__social-media-link footer__twitter-link" href="{{ section.settings.twitter_link }}"
+              target="_blank"
+              rel="noopener"
+              aria-label="Twitter"
+              aria-describedby="new-window-0">
+              <span>{% render 'icon-twitter' %}</span>
+            </a>
+          </li>
+          <li class="footer__social-media-menu-item">
+            <a class="footer__social-media-link footer__instagram-link" href="{{ section.settings.instagram_link }}"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              aria-describedby="new-window-0">
+              <span>{% render 'icon-instagram' %}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     {%- endfor -%}
 
-    <ul class="footer__social-media-menu">
-      <li class="footer__social-media-menu-item">
-        <a class="footer__social-media-link footer__facebook-link" href="{{ section.settings.facebook_link }}"
-          target="_blank"
-          rel="noopener"
-          aria-label="Facebook"
-          aria-describedby="new-window-0">
-          <span>{% render 'icon-facebook' %}</span>
-        </a>
-      </li>
-      <li class="footer__social-media-menu-item">
-        <a class="footer__social-media-link footer__twitter-link" href="{{ section.settings.twitter_link }}"
-          target="_blank"
-          rel="noopener"
-          aria-label="Twitter"
-          aria-describedby="new-window-0">
-          <span>{% render 'icon-twitter' %}</span>
-        </a>
-      </li>
-      <li class="footer__social-media-menu-item">
-        <a class="footer__social-media-link footer__instagram-link" href="{{ section.settings.instagram_link }}"
-          target="_blank"
-          rel="noopener"
-          aria-label="Instagram"
-          aria-describedby="new-window-0">
-          <span>{% render 'icon-instagram' %}</span>
-        </a>
-      </li>
-    </ul>
+    <div class="footer__wrapper-two-col">
+      <ul class="footer__social-media-menu footer__social-media-menu--mobile">
+        <li class="footer__social-media-menu-item">
+          <a class="footer__social-media-link footer__facebook-link" href="{{ section.settings.facebook_link }}"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            aria-describedby="new-window-0">
+            <span>{% render 'icon-facebook' %}</span>
+          </a>
+        </li>
+        <li class="footer__social-media-menu-item">
+          <a class="footer__social-media-link footer__twitter-link" href="{{ section.settings.twitter_link }}"
+            target="_blank"
+            rel="noopener"
+            aria-label="Twitter"
+            aria-describedby="new-window-0">
+            <span>{% render 'icon-twitter' %}</span>
+          </a>
+        </li>
+        <li class="footer__social-media-menu-item">
+          <a class="footer__social-media-link footer__instagram-link" href="{{ section.settings.instagram_link }}"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            aria-describedby="new-window-0">
+            <span>{% render 'icon-instagram' %}</span>
+          </a>
+        </li>
+      </ul>
 
 
-    <p class="footer__copyright-text">&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: '/' }} | {{ powered_by_link }}</p>
+      <p class="footer__copyright-text">&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: '/' }} | {{ powered_by_link }}</p>
+    </div>
   </div>
 </footer>
 

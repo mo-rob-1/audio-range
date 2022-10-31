@@ -1,10 +1,10 @@
 {%- for block in section.blocks -%}
     <section class="featured-product-two">
-      <img class="featured-product-two__img" src="{{ block.settings.image_mobile | img_url: 'master' }}">
-      {%- comment -%} <img src="{{ block.settings.image_desktop | img_url: 'master' }}"> {%- endcomment -%}
-      {%- comment -%} <p class="featured-product-two__title">
-        {{ block.settings.hero_title }}
-      </p> {%- endcomment -%}
+      <img class="featured-product-two__img featured-product-two__img--mobile" src="{{ block.settings.image_mobile | img_url: 'master' }}">
+
+      <img class="featured-product-two__img featured-product-two__img--tablet" src="{{ block.settings.image_tablet | img_url: 'master' }}">
+
+      <img class="featured-product-two__img featured-product-two__img--desktop" src="{{ block.settings.image_desktop | img_url: 'master' }}">
 
       <div class="featured-product-two__text-wrapper">
         <h1 class="featured-product-two__product-name">
@@ -13,7 +13,7 @@
         <a class="featured-product-two__link" href="products/{{ block.settings.product }}">See Product</a>
       </div>
     </section>
-  {%- endfor -%}
+{%- endfor -%}
   
   {% schema %}
     {
@@ -29,6 +29,11 @@
               "type": "image_picker",
               "id": "image_mobile",
               "label": "Add Image for Mobile View"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_tablet",
+              "label": "Add Image for Tablet View"
             },
             {
               "type": "image_picker",
