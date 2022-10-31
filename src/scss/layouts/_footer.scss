@@ -3,9 +3,12 @@
 .footer {
     background-color: $primaryBlack;
     text-align: center;
+    @include responsive(tablet) {
+        text-align: left;
+    }
     &__container {
         margin: 0 auto;
-        max-width: 1300px;
+        max-width: 1200px;
         width: 90%;
     }
     &__menu {
@@ -14,6 +17,35 @@
         display: grid;
         gap: 1rem;
         margin-top: 3rem;
+        @include responsive(tablet) {
+            display: flex;
+        }
+        @include responsive(laptop) {
+            justify-content: flex-end;
+            gap: 2rem;
+        }
+    }
+    &__menu-item {
+        @include responsive(tablet) {
+            margin-right: 1rem;
+        }
+        @include responsive(laptop) {
+            margin-right: 0;
+        }
+    }
+    &__wrapper-two-col {
+        @include responsive(tablet) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        @include responsive(laptop) {
+            flex-direction: initial;
+            margin-top: 2rem;
+        }
+        @include responsive(laptop-lg) {
+            padding-bottom: 2rem;
+        }
     }
     &__social-media-menu {
         padding: 0;
@@ -29,15 +61,37 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 3rem;
+        @include responsive(tablet) {
+            justify-content: left;
+        }
+        @include responsive(laptop-lg) {
+            margin-bottom: 4.5rem;
+        }
     }
     &__border {
         height: 4px;
         background: $darkOrange;
         width: 30%;
+        @include responsive(tablet) {
+            width: 15%;
+        }
+        @include responsive(laptop-lg) {
+            width: 10%;
+        }
     }
     &__description {
         margin-top: 3rem;
         margin-bottom: 3rem;
+        @include responsive(tablet) {
+            text-align: left;
+        }
+        @include responsive(laptop) {
+            width: 40%;
+            margin-bottom: 0;
+        }
+        @include responsive(laptop-lg) {
+            width: 45%;
+        }
     }
     &__facebook-link,
     &__twitter-link {
@@ -46,5 +100,30 @@
     &__copyright-text {
         padding-top: 1rem;
         padding-bottom: 1rem;
+    }
+    &__site-name {
+        @include responsive(laptop) {
+            float: left;
+        }
+    }
+    &__social-media-menu--desktop {
+        display: none;
+        @include responsive(laptop) {
+            display: flex;
+            align-items: self-end;
+            margin-bottom: 0;
+        }
+    }
+    &__social-media-menu--mobile {
+        display: flex;
+        @include responsive(laptop) {
+            display: none;
+        }
+    }
+    &__desktop-col-wrapper {
+        @include responsive(laptop) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
