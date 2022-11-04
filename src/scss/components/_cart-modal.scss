@@ -82,6 +82,10 @@
     color: #FFFFFF;
     cursor: pointer;
 }
+.modal-checkout-btn:hover {
+    background-color: $lightOrange;
+    transition: .3s;
+}
 .remove-all-btn {
     border: none;
     background: none;
@@ -95,6 +99,11 @@
     mix-blend-mode: normal;
     opacity: 0.5;
     cursor: pointer;
+}
+.remove-all-btn:hover {
+    color: $darkOrange;
+    opacity: 1;
+    transition: .3s;
 }
 .cart-empty-text {
     text-align: center;
@@ -123,4 +132,9 @@
     text-transform: uppercase;
     color: #FFFFFF;
     cursor: pointer;
+}
+.cart-empty-cta-link:hover {
+    background-color: $lightOrange;
+    color: #FFFFFF;
+    transition: .3s;
 }
