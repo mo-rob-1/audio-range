@@ -1,6 +1,6 @@
 # Audio Range
 
-An eCommerce that sells audio equipment custom built using Shopify CLI, Liquid, SCSS and jQuery.
+An eCommerce site that sells audio equipments, custom built using Shopify CLI, Liquid, SCSS and jQuery.
 
 ![GIF showing the travelGram App](src/images/audio-range.gif)
 
