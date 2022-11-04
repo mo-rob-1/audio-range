@@ -27,4 +27,9 @@
         padding-left: 3rem;
         padding-right: 3rem;
     }
+    &__btn:hover {
+        background: $lightOrange;
+        color: $white;
+        transition: .3s;
+    }
 }
