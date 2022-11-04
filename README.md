@@ -12,18 +12,25 @@ An eCommerce that sells audio equipment custom built using Shopify CLI, Liquid, 
 
 ## Screenshots
 
+## Homepage
 ![Screenshot of Audio Range - Homepage](src/images/screenshot-one.png)
 
+## Headphones Collections Page
 ![Screenshot of Audio Range - Headphones Collections Page](src/images/screenshot-two.png)
 
+## Speakers Collections Page
 ![Screenshot of Audio Range - Speakers Collections Page](src/images/screenshot-three.png)
 
+## Earphones Collections Page
 ![Screenshot of Audio Range - Earphones Collections Page](src/images/screenshot-four.png)
 
+## Product Page
 ![Screenshot of Audio Range - Product Page](src/images/screenshot-five.png)
 
+## Cart Model
 ![Screenshot of Audio Range - Cart Model](src/images/screenshot-six.png)
 
+## Cart Page
 ![Screenshot of Audio Range - Cart Page](src/images/screenshot-seven.png)
 
 ## Technologies
