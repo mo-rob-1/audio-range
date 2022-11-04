@@ -32,11 +32,6 @@
                                     </div>
                                   </div>
                               </td>
-                              {%- comment -%} <td class="table__data">
-                                  <a href="{{ item.url }}">{{ item.product.title | truncatewords: 5 }}</a>
-                                  <span>{{ item.variant.title }}</span>
-                                  <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">Remove</a>
-                              </td> {%- endcomment -%}
                               <td class="table__data">
                                   <input class="table__input" name="updates[]" value="{{ item.quantity }}" min="1" type="number" id="updates_{{ forloop.index }}">
                               </td>
@@ -49,13 +44,6 @@
               </table>
 
               <div>
-                  {%- comment -%} <div>
-                      <div>
-                          <label for="cart_notes">Cart notes:</label>
-                          <textarea id="cart_notes" name="note"></textarea>
-                      </div>
-                  </div> {%- endcomment -%}
-
                   <div>
                       {% for block in section.blocks %}
                           {% case block.type %}
