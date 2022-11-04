@@ -2,7 +2,7 @@
     <div class="product-card__image-wrapper">
       <a href="{{ product_product.url }}">
         {% if product_product.featured_image %}
-          <div>
+          <div data-aos="fade-up">
             <img class="product-card__image product-card__image--default" src="{{ product_product.featured_image | img_url: 'large' }}" alt="{{ product_product.featured_image.alt }}"/>
 
             {% assign media = product_product.media | where: 'position', 2 %}
@@ -18,7 +18,7 @@
     </div>
 
     <div class="product-card__text-wrapper--width text-wrapper">
-      <div class="product-card__text-wrapper">
+      <div class="product-card__text-wrapper" data-aos="fade-up">
         {% if product_product.tags contains 'New Product' %}
           <div class="product-card__tag-wrapper">
             <span class="product-card__tag">New Product</span>
