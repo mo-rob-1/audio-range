@@ -15,11 +15,16 @@
         padding: 1rem 1.8rem;
         margin-top: 1rem;
     }
+    &__link:hover {
+        background: $lightOrange;
+        color: $white;
+        transition: .3s;
+    }
 }
 
 .featured-product-one {
     &__link {
-        background-color: #000000;
+        background-color: $primaryBlack;
         padding: 1rem 1.8rem;
         text-decoration: none;
         font-style: normal;
@@ -30,11 +35,15 @@
         text-transform: uppercase;
         color: $white;
     }
+    &__link:hover {
+        background-color: #383838;
+        transition: .3s;
+    }
 }
 
 .featured-product-two {
     &__link {
-        border: 1px solid #000000;
+        border: 1px solid $primaryBlack;
         padding: 1rem 1.8rem;
         font-style: normal;
         font-weight: 700;
@@ -45,11 +54,16 @@
         color: #000000;
         text-decoration: none;
     }
+    &__link:hover {
+        background-color: $primaryBlack;
+        color: $white;
+        transition: .3s;
+    }
 }
 
 .featured-product-three {
     &__link {
-        border: 1px solid #000000;
+        border: 1px solid $primaryBlack;
         padding: 1rem 1.8rem;
         font-style: normal;
         font-weight: 700;
@@ -59,6 +73,11 @@
         text-transform: uppercase;
         color: #000000;
         text-decoration: none;
+    }
+    &__link:hover {
+        background-color: $primaryBlack;
+        color: $white;
+        transition: .3s;
     }
 }
 
@@ -76,6 +95,11 @@
         padding: 1rem 1.8rem;
         margin-top: 1rem;
     }
+    &__link:hover {
+        background: $lightOrange;
+        color: $white;
+        transition: .3s;
+    }
 }
 
 .recommeded-products {
@@ -91,9 +115,39 @@
         letter-spacing: 1px;
         text-transform: uppercase;
     }
+    &__product-link:hover {
+        background: $lightOrange;
+        color: $white;
+        transition: .3s;
+    }
 }
 
 .list-collections {
+    &__link {
+        display: inline-flex;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $primaryBlack;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+        text-decoration: none;
+        margin-top: 5px;
+        @include responsive(tablet) {
+            margin-top: 0;
+        }
+    }
+    &__link:hover {
+        color: $darkOrange;
+        opacity: 1;
+        transition: .3s;
+    }
+}
+
+.mobile {
     &__link {
         display: inline-flex;
         font-style: normal;
