@@ -1,12 +1,8 @@
-<div>
-    <div>
+<section class="pg-not-found" data-aos="fade-up">
+    <h1 class="pg-not-found__title">
         {{ section.settings.title }}
-    </div>
-    <div>
-        <p>
-            {{ section.settings.subtext_title }}
-        </p>
-    </div>
+    </h1>
+    <p class="pg-not-found__subtext">{{ section.settings.subtext_title }}</p>
     <div>
         {% if section.settings.button.url == blank %}
             {% assign shop_url = shop.secure_url %}
@@ -14,9 +10,9 @@
             {% assign shop_url = section.settings.button_url %}
         {% endif %}
 
-        <a href="{{ shop_url }}">{{ section.settings.button_label }}</a>
+        <a class="pg-not-found__link" href="{{ shop_url }}">{{ section.settings.button_label }}</a>
     </div>
-</div>
+</section>
 
 {% schema %}
 {
