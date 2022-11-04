@@ -1,7 +1,7 @@
 <section class="list-collections">
     <h1 class="list-collections__section-title">{{ section.settings.title }}</h1>
     
-    <div class="list-collections__wrapper">
+    <div class="list-collections__wrapper" data-aos="fade-up">
         {% for collection in collections %}
             {% if collection.all_products_count > 0 %}
                     <div class="list-collections__item">

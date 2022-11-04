@@ -1,16 +1,11 @@
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
 <section class="product">
-    <div>
-      {%- comment -%} {% for media in product.media %}
-        <div>
-          {% render 'product-media', media: media %}
-        </div>
-      {% endfor %} {%- endcomment -%}
+    <div data-aos="fade-up">
         <img class="product__image" src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title | escape }}">
     </div>
 
-    <div>
+    <div data-aos="fade-up">
       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
         <input type="hidden" name="id" value="{{ selected_variant.id }}">
 
@@ -99,12 +94,12 @@
 </section>
 
   <div class="product-details">
-    <div class="product-details__col-1">
+    <div class="product-details__col-1" data-aos="fade-up">
       <h1 class="product-details__title">Features</h1>
       <p class="product-details__description">{{ product.metafields.custom.product_features | newline_to_br }}</p>
     </div>
 
-    <div class="product-details__col-2">
+    <div class="product-details__col-2" data-aos="fade-up">
       <h1 class="product-details__title">In the Box</h1>
 
       <div class="product-details__in-the-box-wrapper">
@@ -127,7 +122,7 @@
     </div>
   </div>
 
-  <section class="product-images">
+  <section class="product-images" data-aos="fade-up">
     <div class="product-images__wrapper">
       {% for image in product.metafields.custom.featured_images.value %}
         <img class="product-images__image" src="{{ image | img_url: "large" }}">
