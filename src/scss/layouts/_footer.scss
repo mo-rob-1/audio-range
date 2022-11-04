@@ -33,6 +33,10 @@
             margin-right: 0;
         }
     }
+    &__menu-link:hover {
+        color: $darkOrange;
+        transition: .3s;
+    }
     &__wrapper-two-col {
         @include responsive(tablet) {
             display: flex;

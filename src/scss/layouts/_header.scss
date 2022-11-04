@@ -92,6 +92,13 @@
   }
 }
 
+.desktop__nav-list-item-link:hover {
+  @include responsive(laptop) {
+    color: $darkOrange;
+    transition: .3s;
+  }
+} 
+
 .desktop__nav-wrapper {
   display: none;
   @include responsive(laptop) {

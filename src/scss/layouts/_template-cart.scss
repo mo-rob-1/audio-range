@@ -6,7 +6,8 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
+    min-height: 100vh;
     padding-top: 3rem;
     padding-bottom: 4rem;
     @include responsive(laptop-lg) {
@@ -41,6 +42,11 @@
         mix-blend-mode: normal;
         opacity: 0.5;
     }
+    &__main-heading-link:hover {
+        color: $darkOrange;
+        transition: .3s;
+        opacity: 1;
+    }
     &__price {
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -74,6 +80,10 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         cursor: pointer;
+    }
+    &__btn:hover {
+        background: $lightOrange;
+        transition: .3s;
     }
     &__form {
         @include responsive(tablet) {
