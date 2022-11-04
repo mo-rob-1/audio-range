@@ -1,5 +1,9 @@
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
+<div class="product__back-link-wrapper">
+  <a href="/collections/all" class="product__back-link">Go Back</a>
+</div>
+
 <section class="product">
     <div data-aos="fade-up">
         <img class="product__image" src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title | escape }}">
