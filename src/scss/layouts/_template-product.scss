@@ -12,12 +12,12 @@
         gap: 4.5rem;
         align-items: center;
     }
-    @include responsive(laptop) {
-        margin-top: 5rem;
-    }
-    @include responsive(laptop-lg) {
-        margin-top: 7rem;
-    }
+    // @include responsive(laptop) {
+    //     margin-top: 5rem;
+    // }
+    // @include responsive(laptop-lg) {
+    //     margin-top: 7rem;
+    // }
     &__image {
         border-radius: 8px;
         @include responsive(tablet) {
@@ -31,6 +31,16 @@
     }
     &__btn-wrapper {
         display: flex;
+    }
+    &__back-link-wrapper {
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 90%;
+        margin-top: 2rem;
+        @include responsive(laptop) {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
     }
 }
 
@@ -96,7 +106,7 @@
 
 .recommeded-products {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1300px;
     width: 90%;
     text-align: center;
     margin-top: 7rem;
