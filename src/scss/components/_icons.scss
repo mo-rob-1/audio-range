@@ -9,3 +9,7 @@
     height: 20px;
     margin-left: 4px;
 }
+.social-icon:hover {
+    fill: $darkOrange;
+    transition: .3s;
+}
