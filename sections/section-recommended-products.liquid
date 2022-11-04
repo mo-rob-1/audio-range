@@ -1,7 +1,7 @@
 <section class="recommeded-products">
-    <h1 class="recommeded-products__title">{{ section.settings.title }}</h1>
+    <h1 class="recommeded-products__title" data-aos="fade-up">{{ section.settings.title }}</h1>
 
-    <div class="recommeded-products__col-wrapper">
+    <div class="recommeded-products__col-wrapper" data-aos="fade-up">
         {%- for block in section.blocks -%}
             <div class="recommeded-products__product-wrapper">
                 <img class="recommeded-products__product-image recommeded-products__product-image--mobile" src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="{{ block.settings.product }}">

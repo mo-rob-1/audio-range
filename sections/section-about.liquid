@@ -1,11 +1,11 @@
 <section class="about">
   {%- for block in section.blocks -%}
-    <div class="about__content-wrapper about__content-wrapper--product-pg-padding">
+    <div class="about__content-wrapper about__content-wrapper--product-pg-padding" data-aos="fade-up">
       <img class="about__img about__img--mobile" src="{{ block.settings.about_image_mobile | img_url: 'master' }}" alt="{{ block.settings.about_title }}">
       <img class="about__img about__img--tablet" src="{{ block.settings.about_image_tablet | img_url: 'master' }}" alt="{{ block.settings.about_title }}">
       <img class="about__img about__img--desktop" src="{{ block.settings.about_image_desktop | img_url: 'master' }}" alt="{{ block.settings.about_title }}">
 
-      <div class="about__col-wrapper">
+      <div class="about__col-wrapper" data-aos="fade-up">
         <h2 class="about__title">
           {{ block.settings.about_title }}
         </h2>

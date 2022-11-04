@@ -2,10 +2,8 @@
   <section class="featured-product-one">
     <div class="featured-product-one__wrapper">
       <img class="featured-product-one__img" src="{{ block.settings.image_mobile | img_url: 'master' }}">
-      {%- comment -%}
-        <img src="{{ block.settings.image_desktop | img_url: 'master' }}">
-      {%- endcomment -%}
-      <div class="featured-product-one__col-wrapper">
+      
+      <div class="featured-product-one__col-wrapper" data-aos="fade-up">
         <p class="featured-product-one__title">
           {{ block.settings.hero_title }}
         </p>
