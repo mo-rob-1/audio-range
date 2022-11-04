@@ -1,12 +1,8 @@
 <div>
   <div>
       <div>
-          <h1>Order
-              {{ order.name }}
-          </h1>
-          <p>Placed on
-              {{ order.created_at | date: format: 'date' }}
-          </p>
+          <h1>Order{{ order.name }}</h1>
+          <p>Placed on{{ order.created_at | date: format: 'date' }}</p>
           <span>{{ order.financial_status_label }}</span>
       </div>
 
