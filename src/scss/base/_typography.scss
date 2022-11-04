@@ -69,6 +69,18 @@ body {
     }
 }
 
+.mobile {
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 1.07143px;
+        text-transform: uppercase;
+    }
+}
+
 .about {
     &__title {
         color: #000000;
