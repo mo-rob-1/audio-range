@@ -4,11 +4,11 @@
     <div class="recommeded-products__col-wrapper" data-aos="fade-up">
         {%- for block in section.blocks -%}
             <div class="recommeded-products__product-wrapper">
-                <img class="recommeded-products__product-image recommeded-products__product-image--mobile" src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="{{ block.settings.product }}">
-                <img class="recommeded-products__product-image recommeded-products__product-image--tablet" src="{{ block.settings.image_tablet | img_url: 'master' }}" alt="{{ block.settings.product }}">
-                <img class="recommeded-products__product-image recommeded-products__product-image--desktop" src="{{ block.settings.image_desktop | img_url: 'master' }}" alt="{{ block.settings.product }}">
+                <a href="{{ block.settings.link }}"><img class="recommeded-products__product-image recommeded-products__product-image--mobile" src="{{ block.settings.image_mobile | img_url: 'master' }}" alt="{{ block.settings.product }}"></a>
+                <a href="{{ block.settings.link }}"><img class="recommeded-products__product-image recommeded-products__product-image--tablet" src="{{ block.settings.image_tablet | img_url: 'master' }}" alt="{{ block.settings.product }}"></a>
+                <a href="{{ block.settings.link }}"><img class="recommeded-products__product-image recommeded-products__product-image--desktop" src="{{ block.settings.image_desktop | img_url: 'master' }}" alt="{{ block.settings.product }}"></a>
 
-                <h2 class="recommeded-products__product-title">{{ block.settings.title }}</h2>
+                <a class="recommeded-products__product-title-link" href="{{ block.settings.link }}"><h2 class="recommeded-products__product-title">{{ block.settings.title }}</h2></a>
 
                 <div class="recommeded-products__product-link-wrapper">
                     <a class="recommeded-products__product-link" href="{{ block.settings.link }}">See Product</a>
