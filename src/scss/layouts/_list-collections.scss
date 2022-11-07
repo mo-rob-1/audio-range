@@ -45,6 +45,9 @@
         align-items: center;
         margin-top: 1rem;
     }
+    &__title-link {
+        text-decoration: none;
+    }
     &__section-title {
         display: none;
     }

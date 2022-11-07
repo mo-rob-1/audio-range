@@ -149,7 +149,7 @@
 
 .mobile {
     &__link {
-        display: inline-flex;
+        display: inline-flex !important;
         font-style: normal;
         font-weight: 700;
         font-size: 13px;

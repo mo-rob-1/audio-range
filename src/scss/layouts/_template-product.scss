@@ -118,7 +118,7 @@
         }        
     }
     &__product-title {
-        margin-top: 2rem;
+        margin: 0;
     }
     &__product-image {
         border-radius: 8px;
@@ -140,6 +140,11 @@
         @include responsive(tablet) {
             display: none;
         }
+    }
+    &__product-title-link {
+        margin-top: 2rem;
+        display: inline-block;
+        text-decoration: none;
     }
     &__product-image--tablet {
         display: none;
