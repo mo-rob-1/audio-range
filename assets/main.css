@@ -2173,6 +2173,9 @@ body {
   align-items: center;
   margin-top: 1rem;
 }
+.list-collections__title-link {
+  text-decoration: none;
+}
 .list-collections__section-title {
   display: none;
 }
@@ -2850,7 +2853,7 @@ body {
   }
 }
 .recommeded-products__product-title {
-  margin-top: 2rem;
+  margin: 0;
 }
 .recommeded-products__product-image {
   border-radius: 8px;
@@ -2874,6 +2877,11 @@ body {
   .recommeded-products__product-image--mobile {
     display: none;
   }
+}
+.recommeded-products__product-title-link {
+  margin-top: 2rem;
+  display: inline-block;
+  text-decoration: none;
 }
 .recommeded-products__product-image--tablet {
   display: none;
@@ -3236,7 +3244,7 @@ body {
 }
 
 .mobile__link {
-  display: inline-flex;
+  display: inline-flex !important;
   font-style: normal;
   font-weight: 700;
   font-size: 13px;
