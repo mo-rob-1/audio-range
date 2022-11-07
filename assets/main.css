@@ -2154,6 +2154,7 @@ body {
   background-color: #F1F1F1;
 }
 .list-collections__text-wrapper {
+  display: inline-block;
   padding-bottom: 1.5rem;
 }
 .list-collections__img {
