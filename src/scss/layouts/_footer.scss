@@ -114,7 +114,7 @@
         display: none;
         @include responsive(laptop) {
             display: flex;
-            align-items: self-end;
+            align-items: flex-end;
             margin-bottom: 0;
         }
     }

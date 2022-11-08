@@ -2684,7 +2684,7 @@ body {
 @media only screen and (min-width: 1024px) {
   .footer__social-media-menu--desktop {
     display: flex;
-    align-items: self-end;
+    align-items: flex-end;
     margin-bottom: 0;
   }
 }
