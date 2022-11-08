@@ -2,11 +2,6 @@
   <div>
     <div class="header__wrapper">
       <div class="header__nav--mobile">
-        <!-- STORE NAME / STORE LOGO -->
-       {%- comment -%} <button class="header__hamburger-btn" type="button" id="flip">
-          {% render 'icon-hamburger' %}
-        </button>  {%- endcomment -%}
-
         <a href="#" class="menu-button [ js-menu-button ] header__hamburger-btn" id="flip">
           <div class="menu-icon">
            <span></span>
@@ -16,7 +11,9 @@
           </div>
         </a>
 
-        <a class="header__site-name" href="{{ shop.url }}">{{ shop.name }}</a>
+        <div class="header__site-name">
+          <a class="header__site-name-link" href="{{ shop.url }}">{{ shop.name }}</a>
+        </div>
 
         <!-- NAVIGATION LINKS FOR DESKTOP MENU -->
         <div class="desktop__nav-wrapper">
