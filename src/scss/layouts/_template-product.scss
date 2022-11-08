@@ -12,12 +12,6 @@
         gap: 4.5rem;
         align-items: center;
     }
-    // @include responsive(laptop) {
-    //     margin-top: 5rem;
-    // }
-    // @include responsive(laptop-lg) {
-    //     margin-top: 7rem;
-    // }
     &__image {
         border-radius: 8px;
         @include responsive(tablet) {
